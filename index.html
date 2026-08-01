@@ -75,6 +75,103 @@
         h1, h2, h3, h4, .font-luxury { font-family: 'Cinzel', serif; letter-spacing: 0.05em; }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+        /* --- INITIAL LOADING SCREEN (Kembali Elegan Golden/Gold) --- */
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #0a0a0c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #loader-wrapper.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-circle-box {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .loader-circle-box::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: conic-gradient(transparent, transparent, var(--gold));
+            animation: loaderSpin 1.5s linear infinite;
+        }
+        .loader-circle-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #0a0a0c;
+            border-radius: 50%;
+        }
+        .loader-logo-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .loader-logo-letters {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #fff;
+            letter-spacing: -2px;
+            display: block;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+        .loader-logo-sub {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.4rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            display: block;
+        }
+        .loader-text-slider {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            height: 25px;
+            position: relative;
+            width: 250px;
+            text-align: center;
+        }
+        .loader-text-item {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+        .loader-text-item.active-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes loaderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .header-logo-box { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-white); }
         .header-logo-circle {
             width: 42px; height: 42px; background: #09090b; border-radius: 50%;
@@ -180,13 +277,14 @@
         }
         .social-circle:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
 
+        /* --- BUTTON KONSULTASI EKSKLUSIF (Animasi Cahaya Berbeda Warna: Emas, Cyan, Rose) --- */
         .btn-flash-container {
             position: relative; display: inline-block; padding: 2px; border-radius: 6px;
-            overflow: hidden; z-index: 1; box-shadow: 0 4px 15px rgba(223, 186, 71, 0.4);
+            overflow: hidden; z-index: 1; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
         .btn-flash-container::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(transparent, transparent, var(--gold), transparent);
+            background: conic-gradient(transparent, transparent, #38bdf8, #f43f5e, var(--gold), transparent);
             animation: borderFlash 3s linear infinite; z-index: -2;
         }
         .btn-flash-container::after {
@@ -347,6 +445,21 @@
     </style>
 </head>
 <body>
+
+    <!-- Initial Loading Splash Screen (Elegan Gold) -->
+    <div id="loader-wrapper">
+        <div class="loader-circle-box">
+            <div class="loader-logo-inner">
+                <span class="loader-logo-letters">SK</span>
+                <span class="loader-logo-sub">STUDIO</span>
+            </div>
+        </div>
+        <div class="loader-text-slider">
+            <span class="loader-text-item active-text">Kontraktor</span>
+            <span class="loader-text-item">Arsitektur</span>
+            <span class="loader-text-item">Interior Design</span>
+        </div>
+    </div>
 
     <!-- Hidden Navigation Drawer Sidebar -->
     <div class="sidebar-overlay" id="sidebarMenu">
@@ -832,6 +945,24 @@
     </footer>
 
     <script>
+        // --- LOADER & TEXT SLIDER SCRIPT (1 Detik Per Kata) ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const loaderTexts = document.querySelectorAll('.loader-text-item');
+            let textIndex = 0;
+            
+            const textInterval = setInterval(() => {
+                loaderTexts[textIndex].classList.remove('active-text');
+                textIndex = (textIndex + 1) % loaderTexts.length;
+                loaderTexts[textIndex].classList.add('active-text');
+            }, 1000);
+
+            setTimeout(() => {
+                clearInterval(textInterval);
+                const loader = document.getElementById('loader-wrapper');
+                loader.classList.add('fade-out');
+            }, 3200);
+        });
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebarMenu');
             sidebar.classList.toggle('open');
