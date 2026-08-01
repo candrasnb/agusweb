@@ -76,7 +76,7 @@
         h1, h2, h3, h4, .font-luxury { font-family: 'Cinzel', serif; letter-spacing: 0.08em; }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- INITIAL LOADING SCREEN (Elegan Gold & Minimalis Gelap) --- */
+        /* --- INITIAL LOADING SCREEN (Posisi Center Sempurna & Rata Tengah) --- */
         #loader-wrapper {
             position: fixed;
             top: 0;
@@ -95,6 +95,14 @@
             opacity: 0;
             visibility: hidden;
         }
+        .loader-content-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: translateY(-10px); /* Sedikit kompensasi optik visual agar benar-benar pas di tengah */
+        }
         .loader-circle-box {
             position: relative;
             width: 95px;
@@ -103,7 +111,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .loader-circle-box::before {
             content: '';
@@ -236,9 +244,14 @@
         .hero-content { width: 100%; max-width: 850px; z-index: 2; }
         
         .hero h1 { 
-            font-size: calc(2.2rem + 2.8vw); font-weight: 700; line-height: 1.1; margin-bottom: 15px; 
-            text-transform: uppercase; color: #ffffff;
-            letter-spacing: 0.1em;
+            font-size: clamp(2.2rem, 8vw, 4.2rem); 
+            font-weight: 700; 
+            line-height: 1.1; 
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
             animation: luxuryEntrance 1.8s var(--transition-premium) forwards;
         }
@@ -249,13 +262,13 @@
             align-items: center;
             width: 100%;
             white-space: nowrap; 
-            font-size: calc(0.55rem + 0.6vw); 
+            font-size: clamp(0.48rem, 2.8vw, 0.85rem); 
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.15em;
             color: var(--gold);
             margin-bottom: 30px;
-            padding: 0 10px;
+            padding: 0 5px;
         }
 
         @keyframes luxuryEntrance {
@@ -283,7 +296,7 @@
         }
         .social-circle:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
 
-        /* --- TOMBOL KONSULTASI EKSKLUSIF (Efek Cahaya Multi-Warna Berbeda: Emas Mewah, Deep Teal, & Amber) --- */
+        /* --- TOMBOL KONSULTASI EKSKLUSIF (Efek Cahaya Multi-Warna Berbeda) --- */
         .btn-flash-container {
             position: relative; display: inline-block; padding: 2px; border-radius: 8px;
             overflow: hidden; z-index: 1; box-shadow: 0 10px 30px rgba(223, 186, 71, 0.25);
@@ -461,18 +474,20 @@
 </head>
 <body>
 
-    <!-- Initial Loading Splash Screen (Elegan Gold) -->
+    <!-- Initial Loading Splash Screen (Posisi Center Sempurna & Rata Tengah) -->
     <div id="loader-wrapper">
-        <div class="loader-circle-box">
-            <div class="loader-logo-inner">
-                <span class="loader-logo-letters">SK</span>
-                <span class="loader-logo-sub">STUDIO</span>
+        <div class="loader-content-center">
+            <div class="loader-circle-box">
+                <div class="loader-logo-inner">
+                    <span class="loader-logo-letters">SK</span>
+                    <span class="loader-logo-sub">STUDIO</span>
+                </div>
             </div>
-        </div>
-        <div class="loader-text-slider">
-            <span class="loader-text-item active-text">Kontraktor</span>
-            <span class="loader-text-item">Arsitektur</span>
-            <span class="loader-text-item">Interior Design</span>
+            <div class="loader-text-slider">
+                <span class="loader-text-item active-text">Kontraktor</span>
+                <span class="loader-text-item">Arsitektur</span>
+                <span class="loader-text-item">Interior Design</span>
+            </div>
         </div>
     </div>
 
@@ -519,10 +534,10 @@
     <!-- Cinematic Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>SK – STUDIO</h1>
+            <h1>SK - STUDIO</h1>
             
             <div class="hero-subtitle-row">
-                Kontraktor &bull; Arsitektur &bull; Interior Designer
+                KONTRAKTOR &bull; ARSITEKTUR &bull; INTERIOR DESIGNER
             </div>
 
             <p>Konsultan Rancang Bangun Premium. Kami Menghadirkan Jasa Kontraktor Pelaksana Struktur yang Aman, Rancangan Arsitektur Eksklusif, serta Sentuhan Interior Designer Profesional dengan Visualisasi 3D Realistis Tangguh.</p>
