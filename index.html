@@ -76,7 +76,7 @@
         h1, h2, h3, h4, .font-luxury { font-family: 'Cinzel', serif; letter-spacing: 0.08em; }
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- INITIAL LOADING SCREEN (Posisi Center Sempurna & Rata Tengah) --- */
+        /* --- INITIAL LOADING SCREEN --- */
         #loader-wrapper {
             position: fixed;
             top: 0;
@@ -101,7 +101,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            transform: translateY(-10px); /* Sedikit kompensasi optik visual agar benar-benar pas di tengah */
+            transform: translateY(-10px);
         }
         .loader-circle-box {
             position: relative;
@@ -217,22 +217,25 @@
         .sidebar-links a { color: var(--text-white); text-decoration: none; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: 0.3s; }
         .sidebar-links a:hover { color: var(--gold); padding-left: 8px; }
 
+        /* --- BOTTOM NAVIGATION (Ukuran & Font Disamakan Sempurna) --- */
         .bottom-nav {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
             background: rgba(20, 20, 23, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-gold); padding: 10px 25px;
+            border: 1px solid var(--border-gold); padding: 10px 20px;
             border-radius: 100px; display: flex; justify-content: space-between;
-            align-items: center; width: 90%; max-width: 450px; z-index: 998;
+            align-items: center; width: 92%; max-width: 450px; z-index: 998;
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(223, 186, 71, 0.15);
         }
         .bottom-nav-item {
             display: flex; flex-direction: column; align-items: center; gap: 3px;
             color: var(--text-dim); text-decoration: none; font-size: 0.6rem;
             font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: 0.3s;
+            flex: 1; text-align: center;
         }
-        .bottom-nav-item i { font-size: 1.1rem; }
+        .bottom-nav-item i { font-size: 1.1rem; line-height: 1.2; }
         .bottom-nav-item:hover, .bottom-nav-item.active { color: var(--gold); }
         .bottom-nav-item.chat-highlight { color: #25d366; }
+        .bottom-nav-item.ig-highlight { color: #e1306c; }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -296,7 +299,7 @@
         }
         .social-circle:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
 
-        /* --- TOMBOL KONSULTASI EKSKLUSIF (Efek Cahaya Multi-Warna Berbeda) --- */
+        /* --- TOMBOL KONSULTASI EKSKLUSIF --- */
         .btn-flash-container {
             position: relative; display: inline-block; padding: 2px; border-radius: 8px;
             overflow: hidden; z-index: 1; box-shadow: 0 10px 30px rgba(223, 186, 71, 0.25);
@@ -474,7 +477,7 @@
 </head>
 <body>
 
-    <!-- Initial Loading Splash Screen (Posisi Center Sempurna & Rata Tengah) -->
+    <!-- Initial Loading Splash Screen -->
     <div id="loader-wrapper">
         <div class="loader-content-center">
             <div class="loader-circle-box">
@@ -505,13 +508,13 @@
         </ul>
     </div>
 
-    <!-- Mobile Bottom Floating Navigation Bar -->
+    <!-- Mobile Bottom Floating Navigation Bar (Ukuran & Font IG Disamakan Sempurna) -->
     <div class="bottom-nav">
-        <a href="#" class="bottom-nav-item active"><i class="fa-solid fa-house"></i>Home</a>
-        <a href="#about" class="bottom-nav-item"><i class="fa-solid fa-compass-drafting"></i>Atelier</a>
-        <a href="#services" class="bottom-nav-item"><i class="fa-solid fa-cubes"></i>Layanan</a>
-        <a href="#portfolio" class="bottom-nav-item"><i class="fa-solid fa-images"></i>Karya</a>
-        <a href="https://wa.me/6282115950870?text=Halo%20SK%20STUDIO%2C%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20desain%20dan%20bangun." target="_blank" class="bottom-nav-item chat-highlight"><i class="fa-brands fa-whatsapp"></i>Chat</a>
+        <a href="#" class="bottom-nav-item active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="#about" class="bottom-nav-item"><i class="fa-solid fa-compass-drafting"></i><span>Atelier</span></a>
+        <a href="#services" class="bottom-nav-item"><i class="fa-solid fa-cubes"></i><span>Layanan</span></a>
+        <a href="https://www.instagram.com/sk_studio17" target="_blank" class="bottom-nav-item ig-highlight"><i class="fa-brands fa-instagram"></i><span>IG</span></a>
+        <a href="https://wa.me/6282115950870?text=Halo%20SK%20STUDIO%2C%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20desain%20dan%20bangun." target="_blank" class="bottom-nav-item chat-highlight"><i class="fa-brands fa-whatsapp"></i><span>Chat</span></a>
     </div>
 
     <!-- Top Header Bar -->
@@ -721,7 +724,7 @@
         </section>
     </div>
 
-    <!-- Testimonial Section (FULL LENGKAP 10 TESTIMONI) -->
+    <!-- Testimonial Section -->
     <div class="testimonial-bg" id="testimoni">
         <div class="container">
             <section class="reveal">
@@ -807,7 +810,7 @@
         </div>
     </div>
 
-    <!-- FAQ Accordion Section (FULL LENGKAP 20 QnA) -->
+    <!-- FAQ Accordion Section -->
     <div class="faq-bg" id="faq">
         <div class="container">
             <section class="reveal">
@@ -975,7 +978,7 @@
     </footer>
 
     <script>
-        // --- LOADER & TEXT SLIDER SCRIPT (1 Detik Per Kata, Elegan) ---
+        // --- LOADER & TEXT SLIDER SCRIPT ---
         document.addEventListener("DOMContentLoaded", () => {
             const loaderTexts = document.querySelectorAll('.loader-text-item');
             let textIndex = 0;
@@ -1084,7 +1087,7 @@
             });
 
             bottomNavItems.forEach(item => {
-                if (item.classList.contains('chat-highlight')) return;
+                if (item.classList.contains('chat-highlight') || item.classList.contains('ig-highlight')) return;
                 item.classList.remove('active');
                 if (item.getAttribute('href').slice(1) === currentSection) {
                     item.classList.add('active');
