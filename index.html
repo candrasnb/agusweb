@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SK STUDIO | Ultra-Luxury Architecture, Interior & Contractor Atelier</title>
+    <title id="meta-site-title">SK STUDIO | Ultra-Luxury Architecture, Interior & Contractor Atelier</title>
     
     <!-- Meta Tags SEO Premium -->
     <meta name="description" content="SK STUDIO (CV. SK-STUDIO) - Jasa Kontraktor Mewah, Arsitektur Rumah Tinggal, dan Interior Designer Premium Terpercaya di Bekasi & Jabodetabek. Wujudkan Hunian Eksklusif Anda dengan Akurasi Desain 3D Realistis dan Transparansi RAB.">
@@ -201,6 +201,11 @@
         .logo-text-side { display: flex; flex-direction: column; }
         .logo-text-brand { font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
         .logo-text-sub { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-top: -1px; font-weight: 600; }
+        
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .admin-header-btn { background: none; border: 1px solid var(--border-gold); color: var(--gold); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; transition: 0.3s; }
+        .admin-header-btn:hover { background: var(--gold); color: #0c0c0e; }
+
         .menu-trigger { background: none; border: none; color: var(--text-white); font-size: 1.4rem; cursor: pointer; transition: 0.3s; }
         .menu-trigger:hover { color: var(--gold); }
 
@@ -217,7 +222,7 @@
         .sidebar-links a { color: var(--text-white); text-decoration: none; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: 0.3s; }
         .sidebar-links a:hover { color: var(--gold); padding-left: 8px; }
 
-        /* --- BOTTOM NAVIGATION (Ukuran & Font Disamakan Sempurna) --- */
+        /* --- BOTTOM NAVIGATION --- */
         .bottom-nav {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
             background: rgba(20, 20, 23, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -461,6 +466,42 @@
         .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
+        /* --- ADMIN PANEL & FORM EDITOR STYLES --- */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            max-width: 420px;
+            height: 100vh;
+            background: rgba(12, 12, 14, 0.98);
+            backdrop-filter: blur(25px);
+            z-index: 10000;
+            border-right: 1px solid var(--border-gold);
+            padding: 25px 20px;
+            transition: left 0.4s var(--transition-premium);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.8);
+        }
+        .admin-panel.open { left: 0; }
+        .admin-panel h3 { font-size: 1.1rem; color: var(--gold); text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .admin-close { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 5px; }
+        .admin-content-scroll { overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 15px; padding-right: 5px; }
+        .admin-section-title { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-top: 10px; border-bottom: 1px dashed var(--border); padding-bottom: 4px; }
+        .admin-group { display: flex; flex-direction: column; gap: 5px; }
+        .admin-group label { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; }
+        .admin-group input, .admin-group textarea { background: #0c0c0e; border: 1px solid var(--border); color: #fff; padding: 10px; border-radius: 6px; font-size: 0.85rem; width: 100%; }
+        .admin-group textarea { resize: vertical; min-height: 70px; }
+        .admin-group input:focus, .admin-group textarea:focus { border-color: var(--gold); outline: none; }
+        .admin-btn-save { background: var(--gold); color: #0c0c0e; border: none; padding: 12px; font-weight: 700; text-transform: uppercase; border-radius: 6px; cursor: pointer; transition: 0.3s; margin-top: 15px; width: 100%; }
+        .admin-btn-save:hover { background: #fff; }
+
+        @media (max-width: 480px) {
+            .admin-panel { max-width: 100%; width: 100%; }
+        }
+
         @media (max-width: 992px) {
             .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
@@ -508,7 +549,7 @@
         </ul>
     </div>
 
-    <!-- Mobile Bottom Floating Navigation Bar (Ukuran & Font IG Disamakan Sempurna) -->
+    <!-- Mobile Bottom Floating Navigation Bar -->
     <div class="bottom-nav">
         <a href="#" class="bottom-nav-item active"><i class="fa-solid fa-house"></i><span>Home</span></a>
         <a href="#about" class="bottom-nav-item"><i class="fa-solid fa-compass-drafting"></i><span>Atelier</span></a>
@@ -526,24 +567,29 @@
                     <span class="header-logo-subtext">STUDIO</span>
                 </div>
                 <div class="logo-text-side">
-                    <span class="logo-text-brand">SK STUDIO</span>
+                    <span class="logo-text-brand" id="txt-brand-name">SK STUDIO</span>
                     <span class="logo-text-sub">design & build</span>
                 </div>
             </a>
-            <button class="menu-trigger" onclick="toggleSidebar()"><i class="fa-solid fa-bars-staggered"></i></button>
+            
+            <div class="header-actions">
+                <!-- Tombol Admin di Pojok Kanan Atas -->
+                <button class="admin-header-btn" onclick="requestAdminAccess()" title="Admin Login"><i class="fa-solid fa-lock"></i></button>
+                <button class="menu-trigger" onclick="toggleSidebar()"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
         </div>
     </header>
 
     <!-- Cinematic Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>SK - STUDIO</h1>
+            <h1 id="txt-hero-title">SK - STUDIO</h1>
             
-            <div class="hero-subtitle-row">
+            <div class="hero-subtitle-row" id="txt-hero-subtitle">
                 KONTRAKTOR &bull; ARSITEKTUR &bull; INTERIOR DESIGNER
             </div>
 
-            <p>Konsultan Rancang Bangun Premium. Kami Menghadirkan Jasa Kontraktor Pelaksana Struktur yang Aman, Rancangan Arsitektur Eksklusif, serta Sentuhan Interior Designer Profesional dengan Visualisasi 3D Realistis Tangguh.</p>
+            <p id="txt-hero-desc">Konsultan Rancang Bangun Premium. Kami Menghadirkan Jasa Kontraktor Pelaksana Struktur yang Aman, Rancangan Arsitektur Eksklusif, serta Sentuhan Interior Designer Profesional dengan Visualisasi 3D Realistis Tangguh.</p>
             
             <div class="hero-socials">
                 <a href="https://www.instagram.com/sk_studio17" target="_blank" class="social-circle"><i class="fa-brands fa-square-instagram"></i></a>
@@ -553,7 +599,7 @@
             </div>
             
             <div class="btn-flash-container">
-                <a href="#contact" class="btn-gold">Konsultasi Eksklusif</a>
+                <a href="#contact" class="btn-gold" id="txt-hero-btn">Konsultasi Eksklusif</a>
             </div>
         </div>
     </section>
@@ -563,19 +609,19 @@
         <section id="about" class="reveal">
             <div class="about-grid">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1470&auto=format&fit=crop" alt="SK Studio Workspace">
+                    <img id="img-about" src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1470&auto=format&fit=crop" alt="SK Studio Workspace">
                 </div>
                 <div class="about-text">
-                    <h2>ABOUT US</h2>
-                    <h3>Presisi Desain & Integritas Fisik</h3>
-                    <p>Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</p>
-                    <p>Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</p>
+                    <h2 id="txt-about-title">ABOUT US</h2>
+                    <h3 id="txt-about-subtitle">Presisi Desain & Integritas Fisik</h3>
+                    <p id="txt-about-p1">Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</p>
+                    <p id="txt-about-p2">Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</p>
                     
                     <div class="about-badge">
                         <i class="fa-solid fa-star"></i>
                         <div>
-                            <h4>One-Stop Design & Build</h4>
-                            <p>Menangani Rumah Tinggal Premium, Komersial Ritel, Apartemen, Kantor, hingga Villa.</p>
+                            <h4 id="txt-badge-title">One-Stop Design & Build</h4>
+                            <p id="txt-badge-desc">Menangani Rumah Tinggal Premium, Komersial Ritel, Apartemen, Kantor, hingga Villa.</p>
                         </div>
                     </div>
                 </div>
@@ -588,24 +634,24 @@
         <div class="container">
             <section>
                 <div class="section-header reveal">
-                    <h2>Layanan <span>Utama</span></h2>
-                    <p>Solusi arsitektur dan konstruksi terpadu dari coretan konsep awal hingga serah terima kunci fisik.</p>
+                    <h2><span id="txt-serv-h2-1">Layanan</span> <span id="txt-serv-h2-2">Utama</span></h2>
+                    <p id="txt-serv-desc">Solusi arsitektur dan konstruksi terpadu dari coretan konsep awal hingga serah terima kunci fisik.</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card reveal-left">
                         <i class="fa-solid fa-compass-drafting"></i>
-                        <h3>Arsitektur (Architectural Design)</h3>
-                        <p>Perencanaan tata ruang makro, fasad bangunan ikonik modern, kalkulasi struktur beton/baja yang aman, pembuatan cetak biru gambar kerja teknis (DED) lengkap, serta estimasi RAB yang transparan.</p>
+                        <h3 id="txt-serv-1-title">Arsitektur (Architectural Design)</h3>
+                        <p id="txt-serv-1-desc">Perencanaan tata ruang makro, fasad bangunan ikonik modern, kalkulasi struktur beton/baja yang aman, pembuatan cetak biru gambar kerja teknis (DED) lengkap, serta estimasi RAB yang transparan.</p>
                     </div>
                     <div class="service-card reveal-left">
                         <i class="fa-solid fa-couch"></i>
-                        <h3>Desain Interior (Interior Architecture)</h3>
-                        <p>Transformasi tata ruang bagian dalam lewat aransemen *custom furniture*, pemilihan material kelas premium, skema pencahayaan ambient eksklusif, serta optimalisasi ergonomi kenyamanan ruang.</p>
+                        <h3 id="txt-serv-2-title">Desain Interior (Interior Architecture)</h3>
+                        <p id="txt-serv-2-desc">Transformasi tata ruang bagian dalam lewat aransemen *custom furniture*, pemilihan material kelas premium, skema pencahayaan ambient eksklusif, serta optimalisasi ergonomi kenyamanan ruang.</p>
                     </div>
                     <div class="service-card reveal-left">
                         <i class="fa-solid fa-trowel-bricks"></i>
-                        <h3>Kontraktor (Build & Execution)</h3>
-                        <p>Manajemen pengerjaan proyek konstruksi di lapangan yang diawasi langsung oleh teknisi ahli untuk memastikan wujud fisik bangunan identik dengan draf rencana desain 3D mula-mula.</p>
+                        <h3 id="txt-serv-3-title">Kontraktor (Build & Execution)</h3>
+                        <p id="txt-serv-3-desc">Manajemen pengerjaan proyek konstruksi di lapangan yang diawasi langsung oleh teknisi ahli untuk memastikan wujud fisik bangunan identik dengan draf rencana desain 3D mula-mula.</p>
                     </div>
                 </div>
             </section>
@@ -617,29 +663,29 @@
         <div class="container">
             <section>
                 <div class="section-header reveal">
-                    <h2>Our Working <span>Process</span></h2>
-                    <p>Alur tata kelola pengerjaan proyek yang tertata rapi demi menjaga kepastian mutu bangunan Anda.</p>
+                    <h2><span id="txt-proc-h2-1">Our Working</span> <span id="txt-proc-h2-2">Process</span></h2>
+                    <p id="txt-proc-desc">Alur tata kelola pengerjaan proyek yang tertata rapi demi menjaga kepastian mutu bangunan Anda.</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-card reveal-right">
                         <div class="process-step">1</div>
-                        <h4>Survey Lokasi</h4>
-                        <p>Pengukuran data lahan aktual, analisis kontur tanah, and orientasi cahaya mikro setempat.</p>
+                        <h4 id="txt-proc-1-title">Survey Lokasi</h4>
+                        <p id="txt-proc-1-desc">Pengukuran data lahan aktual, analisis kontur tanah, and orientasi cahaya mikro setempat.</p>
                     </div>
                     <div class="process-card reveal-right">
                         <div class="process-step">2</div>
-                        <h4>Konsultasi</h4>
-                        <p>Penyelarasan kebutuhan konsep ruang, gaya arsitektural, dan limitasi pagu anggaran.</p>
+                        <h4 id="txt-proc-2-title">Konsultasi</h4>
+                        <p id="txt-proc-2-desc">Penyelarasan kebutuhan konsep ruang, gaya arsitektural, dan limitasi pagu anggaran.</p>
                     </div>
                     <div class="process-card reveal-right">
                         <div class="process-step">3</div>
-                        <h4>Design & RAB</h4>
-                        <p>Pembuatan visualisasi rendering 3D fotorealistis lengkap dengan lampiran berkas RAB final.</p>
+                        <h4 id="txt-proc-3-title">Design & RAB</h4>
+                        <p id="txt-proc-3-desc">Pembuatan visualisasi rendering 3D fotorealistis lengkap dengan lampiran berkas RAB final.</p>
                     </div>
                     <div class="process-card reveal-right">
                         <div class="process-step">4</div>
-                        <h4>Pelaksanaan</h4>
-                        <p>Penandatanganan kontrak, pengerjaan fisik di lapangan oleh tukang ahli hingga serah terima.</p>
+                        <h4 id="txt-proc-4-title">Pelaksanaan</h4>
+                        <p id="txt-proc-4-desc">Penandatanganan kontrak, pengerjaan fisik di lapangan oleh tukang ahli hingga serah terima.</p>
                     </div>
                 </div>
             </section>
@@ -652,19 +698,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number" data-target="478">0</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-label" id="txt-stat-1">Projects Completed</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="478">0</div>
-                    <div class="stat-label">Happy Customers</div>
+                    <div class="stat-label" id="txt-stat-2">Happy Customers</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="3">0</div>
-                    <div class="stat-label">Project on Progress</div>
+                    <div class="stat-label" id="txt-stat-3">Project on Progress</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="1730">0</div>
-                    <div class="stat-label">Awards & Recognition</div>
+                    <div class="stat-label" id="txt-stat-4">Awards & Recognition</div>
                 </div>
             </div>
         </div>
@@ -674,50 +720,50 @@
     <div class="container">
         <section id="portfolio">
             <div class="section-header reveal">
-                <h2>Featured <span>Projects</span></h2>
-                <p>Eksplorasi estetika dari deretan karya ruang residensial dan komersial yang telah kami eksekusi.</p>
+                <h2><span id="txt-port-h2-1">Featured</span> <span id="txt-port-h2-2">Projects</span></h2>
+                <p id="txt-port-desc">Eksplorasi estetika dari deretan karya ruang residensial dan komersial yang telah kami eksekusi.</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1475&auto=format&fit=crop" alt="Modern Luxury House">
+                    <img id="img-port-1" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1475&auto=format&fit=crop" alt="Modern Luxury House">
                     <div class="portfolio-overlay">
-                        <span>Architecture & Build</span>
-                        <h3>The Obsidian Luxury Residence</h3>
+                        <span id="txt-port-1-tag">Architecture & Build</span>
+                        <h3 id="txt-port-1-title">The Obsidian Luxury Residence</h3>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1470&auto=format&fit=crop" alt="Luxury Living Room">
+                    <img id="img-port-2" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1470&auto=format&fit=crop" alt="Luxury Living Room">
                     <div class="portfolio-overlay">
-                        <span>Interior Architecture</span>
-                        <h3>Japandi Modern Penthouse</h3>
+                        <span id="txt-port-2-tag">Interior Architecture</span>
+                        <h3 id="txt-port-2-title">Japandi Modern Penthouse</h3>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1496&auto=format&fit=crop" alt="Modern Headquarters Office">
+                    <img id="img-port-3" src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1496&auto=format&fit=crop" alt="Modern Headquarters Office">
                     <div class="portfolio-overlay">
-                        <span>Commercial Space</span>
-                        <h3>SK Atelier Corporate Office</h3>
+                        <span id="txt-port-3-tag">Commercial Space</span>
+                        <h3 id="txt-port-3-title">SK Atelier Corporate Office</h3>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1453&auto=format&fit=crop" alt="Luxury Villa Fasad">
+                    <img id="img-port-4" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1453&auto=format&fit=crop" alt="Luxury Villa Fasad">
                     <div class="portfolio-overlay">
-                        <span>Architecture & Villa</span>
-                        <h3>Crystal Waters Elite Villa</h3>
+                        <span id="txt-port-4-tag">Architecture & Villa</span>
+                        <h3 id="txt-port-4-title">Crystal Waters Elite Villa</h3>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1374&auto=format&fit=crop" alt="Modern Luxury Kitchen">
+                    <img id="img-port-5" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1374&auto=format&fit=crop" alt="Modern Luxury Kitchen">
                     <div class="portfolio-overlay">
-                        <span>Interior Design</span>
-                        <h3>Minimalist Monochromatic Kitchen</h3>
+                        <span id="txt-port-5-tag">Interior Design</span>
+                        <h3 id="txt-port-5-title">Minimalist Monochromatic Kitchen</h3>
                     </div>
                 </div>
                 <div class="portfolio-card reveal">
-                    <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop" alt="Lounge Boutique">
+                    <img id="img-port-6" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop" alt="Lounge Boutique">
                     <div class="portfolio-overlay">
-                        <span>Commercial Retail</span>
-                        <h3>Aura Premium Fashion Hub</h3>
+                        <span id="txt-port-6-tag">Commercial Retail</span>
+                        <h3 id="txt-port-6-title">Aura Premium Fashion Hub</h3>
                     </div>
                 </div>
             </div>
@@ -729,69 +775,69 @@
         <div class="container">
             <section class="reveal">
                 <div class="section-header">
-                    <h2>Apresiasi <span>Klien</span></h2>
-                    <p>Kepercayaan dari berbagai pemilik properti eksklusif atas dedikasi nyata tim kami.</p>
+                    <h2><span id="txt-testi-h2-1">Apresiasi</span> <span id="txt-testi-h2-2">Klien</span></h2>
+                    <p id="txt-testi-desc">Kepercayaan dari berbagai pemilik properti eksklusif atas dedikasi nyata tim kami.</p>
                 </div>
                 <div class="slider-wrapper">
                     <div class="slide-node active">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Hasil rumah tinggal kami benar-benar identik dengan gambar render 3D arsiteknya. Tidak ada manipulasi spesifikasi bahan material lapangan. Sangat terpercaya."</p>
-                        <h4>Bpk. Hendra Kusuma</h4>
-                        <span>Owner Hunian Mewah - Bekasi</span>
+                        <p id="txt-testi-1-text">"Hasil rumah tinggal kami benar-benar identik dengan gambar render 3D arsiteknya. Tidak ada manipulasi spesifikasi bahan material lapangan. Sangat terpercaya."</p>
+                        <h4 id="txt-testi-1-name">Bpk. Hendra Kusuma</h4>
+                        <span id="txt-testi-1-sub">Owner Hunian Mewah - Bekasi</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Manajemen waktu dari tim kontraktor SK STUDIO luar biasa. Proyek renovasi total kantor kami selesai 2 minggu lebih cepat dari target master schedule awal."</p>
-                        <h4>Ibu S. Margaretha</h4>
-                        <span>Direktur Operasional - Jakarta</span>
+                        <p id="txt-testi-2-text">"Manajemen waktu dari tim kontraktor SK STUDIO luar biasa. Proyek renovasi total kantor kami selesai 2 minggu lebih cepat dari target master schedule awal."</p>
+                        <h4 id="txt-testi-2-name">Ibu S. Margaretha</h4>
+                        <span id="txt-testi-2-sub">Direktur Operasional - Jakarta</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Penyusunan RAB sangat detail and transparan. Tidak ada biaya siluman atau tagihan tambahan mendadak di tengah jalan saat fondasi sudah dikerjakan."</p>
-                        <h4>Fransiskus S.</h4>
-                        <span>Developer Ruko Komersial - Surabaya</span>
+                        <p id="txt-testi-3-text">"Penyusunan RAB sangat detail and transparan. Tidak ada biaya siluman atau tagihan tambahan mendadak di tengah jalan saat fondasi sudah dikerjakan."</p>
+                        <h4 id="txt-testi-3-name">Fransiskus S.</h4>
+                        <span id="txt-testi-3-sub">Developer Ruko Komersial - Surabaya</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Desain interior penthouse kami dikerjakan sangat cermat. Pencahayaan lampu tersembunyi dan penataan mebel custom benar-benar menghadirkan aura hotel bintang lima."</p>
-                        <h4>Amelia Wijaya</h4>
-                        <span>Owner Apartemen - Tangerang</span>
+                        <p id="txt-testi-4-text">"Desain interior penthouse kami dikerjakan sangat cermat. Pencahayaan lampu tersembunyi dan penataan mebel custom benar-benar menghadirkan aura hotel bintang lima."</p>
+                        <h4 id="txt-testi-4-name">Amelia Wijaya</h4>
+                        <span id="txt-testi-4-sub">Owner Apartemen - Tangerang</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Sangat komunikatif dalam sesi konsultasi konsep awal. Mereka bersedia merekayasa material cerdas agar anggaran pembangunan kami tidak membengkak berlebihan."</p>
-                        <h4>Bpk. Denny Hermawan</h4>
-                        <span>Private Client - Bandung</span>
+                        <p id="txt-testi-5-text">"Sangat komunikatif dalam sesi konsultasi konsep awal. Mereka bersedia merekayasa material cerdas agar anggaran pembangunan kami tidak membengkak berlebihan."</p>
+                        <h4 id="txt-testi-5-name">Bpk. Denny Hermawan</h4>
+                        <span id="txt-testi-5-sub">Private Client - Bandung</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Pengawasan mutu di lapangan sangat melekat. Logbook material harian dilaporkan via WhatsApp lengkap dengan dokumentasi foto detail. Kami merasa tenang."</p>
-                        <h4>Irwan Syahputra</h4>
-                        <span>Owner Luxury Villa - Bogor</span>
+                        <p id="txt-testi-6-text">"Pengawasan mutu di lapangan sangat melekat. Logbook material harian dilaporkan via WhatsApp lengkap dengan dokumentasi foto detail. Kami merasa tenang."</p>
+                        <h4 id="txt-testi-6-name">Irwan Syahputra</h4>
+                        <span id="txt-testi-6-sub">Owner Luxury Villa - Bogor</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Desain fasad arsitekturnya sangat ikonik dan modern. Banyak kerabat memuji estetika tata ruang sirkulasi udaranya yang sejuk dan hemat energi listrik."</p>
-                        <h4>dr. Anita Rahayu</h4>
-                        <span>Owner Residential - Depok</span>
+                        <p id="txt-testi-7-text">"Desain fasad arsitekturnya sangat ikonik dan modern. Banyak kerabat memuji estetika tata ruang sirkulasi udaranya yang sejuk dan hemat energi listrik."</p>
+                        <h4 id="txt-testi-7-name">dr. Anita Rahayu</h4>
+                        <span id="txt-testi-7-sub">Owner Residential - Depok</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Penyelesaian interior butik kami mendapatkan ulasan sangat baik dari konsumen. Estetika display pakaian menyatu sempurna dengan ambient lighting."</p>
-                        <h4>Riana Monica</h4>
-                        <span>Retail Business Owner - Jakarta</span>
+                        <p id="txt-testi-8-text">"Penyelesaian interior butik kami mendapatkan ulasan sangat baik dari konsumen. Estetika display pakaian menyatu sempurna dengan ambient lighting."</p>
+                        <h4 id="txt-testi-8-name">Riana Monica</h4>
+                        <span id="txt-testi-8-sub">Retail Business Owner - Jakarta</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Kalkulasi struktur beton bertulang bangunan bertingkat kami dikerjakan dengan standar keamanan tinggi. Rekomendasi ketebalan besi sangat kokoh."</p>
-                        <h4>Bpk. Albertus J.</h4>
-                        <span>Private Investor - Bekasi</span>
+                        <p id="txt-testi-9-text">"Kalkulasi struktur beton bertulang bangunan bertingkat kami dikerjakan dengan standar keamanan tinggi. Rekomendasi ketebalan besi sangat kokoh."</p>
+                        <h4 id="txt-testi-9-name">Bpk. Albertus J.</h4>
+                        <span id="txt-testi-9-sub">Private Investor - Bekasi</span>
                     </div>
                     <div class="slide-node">
                         <i class="fa-solid fa-quote-left"></i>
-                        <p>"Garansi pemeliharaan pasca serah terima kunci dipenuhi dengan tanggung jawab penuh. Respon cepat saat perbaikan keretakan minor dinding semen."</p>
-                        <h4>H. Muhammad Zaki</h4>
-                        <span>Owner Townhouse - Cikarang</span>
+                        <p id="txt-testi-10-text">"Garansi pemeliharaan pasca serah terima kunci dipenuhi dengan tanggung jawab penuh. Respon cepat saat perbaikan keretakan minor dinding semen."</p>
+                        <h4 id="txt-testi-10-name">H. Muhammad Zaki</h4>
+                        <span id="txt-testi-10-sub">Owner Townhouse - Cikarang</span>
                     </div>
                 </div>
                 <div class="slider-dots-container">
@@ -815,89 +861,89 @@
         <div class="container">
             <section class="reveal">
                 <div class="section-header">
-                    <h2>Pertanyaan <span>Umum (Q&A)</span></h2>
-                    <p>Informasi terlengkap dan regulasi pengerjaan proyek desain serta konstruksi bangunan bersama SK STUDIO.</p>
+                    <h2><span id="txt-faq-h2-1">Pertanyaan</span> <span id="txt-faq-h2-2">Umum (Q&A)</span></h2>
+                    <p id="txt-faq-desc">Informasi terlengkap dan regulasi pengerjaan proyek desain serta konstruksi bangunan bersama SK STUDIO.</p>
                 </div>
                 <div class="faq-max">
                     <div class="faq-item">
-                        <div class="faq-question">1. Wilayah mana saja yang dijangkau oleh jasa pelayanan SK STUDIO? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Meskipun studio utama kami berada di Bekasi, jangkauan layanan arsitektur dan interior kami mencakup seluruh wilayah nasional Indonesia secara daring/remote. Untuk unit jasa kontraktor pelaksana, fokus utama kami melayani area Jabodetabek.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q1">1. Wilayah mana saja yang dijangkau oleh jasa pelayanan SK STUDIO?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a1">Meskipun studio utama kami berada di Bekasi, jangkauan layanan arsitektur dan interior kami mencakup seluruh wilayah nasional Indonesia secara daring/remote. Untuk unit jasa kontraktor pelaksana, fokus utama kami melayani area Jabodetabek.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">2. Apa keuntungan utama mempercayakan proyek pada sistem Design & Build integratif? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Keuntungan utamanya adalah efisiensi komunikasi and eliminasi risiko selisih paham. Karena tim arsitek yang merancang gambar berada di bawah satu atap manajemen yang sama dengan tim kontraktor lapangan, hasil fisik dipastikan identik dengan desain 3D awal.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q2">2. Apa keuntungan utama mempercayakan proyek pada sistem Design & Build integratif?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a2">Keuntungan utamanya adalah efisiensi komunikasi and eliminasi risiko selisih paham. Karena tim arsitek yang merancang gambar berada di bawah satu atap manajemen yang sama dengan tim kontraktor lapangan, hasil fisik dipastikan identik dengan desain 3D awal.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">3. Bagaimana struktur penentuan tarif jasa desain arsitektur di studio Anda? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Tarif penentuan jasa arsitek dihitung berdasarkan volume total dimensi luasan per meter persegi ($m^2$) dari bangunan, serta dipengaruhi oleh tingkat kompleksitas eksterior fasad dan detail komponen struktural yang diajukan.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q3">3. Bagaimana struktur penentuan tarif jasa desain arsitektur di studio Anda?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a3">Tarif penentuan jasa arsitek dihitung berdasarkan volume total dimensi luasan per meter persegi ($m^2$) dari bangunan, serta dipengaruhi oleh tingkat kompleksitas eksterior fasad dan detail komponen struktural yang diajukan.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">4. Apakah visualisasi gambar 3D yang saya dapatkan dijamin mirip dengan hasil bangunan asli? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Ya, kami menjamin akurasi rendering 3D di atas 90% mendekati kenyataan fisik. Hal ini dikarenakan tim desainer kami memetakan interior dan arsitektural menggunakan material yang riil dan tersedia di rantai material supplier kami di pasar nyata.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q4">4. Apakah visualisasi gambar 3D yang saya dapatkan dijamin mirip dengan hasil bangunan asli?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a4">Ya, kami menjamin akurasi rendering 3D di atas 90% mendekati kenyataan fisik. Hal ini dikarenakan tim desainer kami memetakan interior dan arsitektural menggunakan material yang riil dan tersedia di rantai material supplier kami di pasar nyata.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">5. Apakah draf Rencana Anggaran Biaya (RAB) bisa disesuaikan dengan alokasi budget saya? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Sangat bisa. Melalui sesi konsultasi mendalam di awal, tim arsitek kami akan merekayasa rancangan gambar kerja dengan mensubstitusi material alternatif cerdas agar pengeluaran akhir tetap terkontrol tanpa mengorbankan kualitas kekuatan struktur.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q5">5. Apakah draf Rencana Anggaran Biaya (RAB) bisa disesuaikan dengan alokasi budget saya?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a5">Sangat bisa. Melalui sesi konsultasi mendalam di awal, tim arsitek kami akan merekayasa rancangan gambar kerja dengan mensubstitusi material alternatif cerdas agar pengeluaran akhir tetap terkontrol tanpa mengorbankan kualitas kekuatan struktur.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">6. Dokumen apa saja yang akan saya terima di akhir fase perancangan arsitektur? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Klien akan menerima bundel dokumen teknis lengkap yang mencakup: Gambar Kerja Konstruksi (Detail Engineering Design/DED), Berkas Rencana Anggaran Biaya (RAB) terperinci, dokumen visual Rendering 3D Eksterior & Interior resolusi tinggi, serta draf spesifikasi material (RKS).</p></div>
+                        <div class="faq-question"><span id="txt-faq-q6">6. Dokumen apa saja yang akan saya terima di akhir fase perancangan arsitektur?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a6">Klien akan menerima bundel dokumen teknis lengkap yang mencakup: Gambar Kerja Konstruksi (Detail Engineering Design/DED), Berkas Rencana Anggaran Biaya (RAB) terperinci, dokumen visual Rendering 3D Eksterior & Interior resolusi tinggi, serta draf spesifikasi material (RKS).</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">7. Berapa lama estimasi waktu yang dibutuhkan untuk menyelesaikan satu draf desain rumah tinggal? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Durasi pengerjaan sangat variatif tergantung pada dimensi bangunan dan kecepatan proses resmi resmi revisi dari pihak klien. Rata-rata proses perancangan konseptual hingga paket gambar kerja DED final membutuhkan waktu berkisar 1 hingga 3 bulan.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q7">7. Berapa lama estimasi waktu yang dibutuhkan untuk menyelesaikan satu draf desain rumah tinggal?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a7">Durasi pengerjaan sangat variatif tergantung pada dimensi bangunan dan kecepatan proses resmi resmi revisi dari pihak klien. Rata-rata proses perancangan konseptual hingga paket gambar kerja DED final membutuhkan waktu berkisar 1 hingga 3 bulan.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">8. Apakah SK STUDIO juga melayani pembuatan dokumen perizinan PBG (IMB lama)? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Kami menyediakan kelengkapan prasyarat teknis arsitektur berupa cetak biru Gambar Kerja Konstruksi komprehensif yang telah sesuai standar regulasi tata kota untuk mempermudah Anda atau biro jasa eksternal dalam mengurus permohonan Persetujuan Bangunan Gedung (PBG).</p></div>
+                        <div class="faq-question"><span id="txt-faq-q8">8. Apakah SK STUDIO juga melayani pembuatan dokumen perizinan PBG (IMB lama)?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a8">Kami menyediakan kelengkapan prasyarat teknis arsitektur berupa cetak biru Gambar Kerja Konstruksi komprehensif yang telah sesuai standar regulasi tata kota untuk mempermudah Anda atau biro jasa eksternal dalam mengurus permohonan Persetujuan Bangunan Gedung (PBG).</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">9. Bagaimana skema tahapan pembayaran jasa kontraktor pengerjaan fisik bangunan? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Pembayaran unit kontraktor dilakukan secara bertahap berbasis pemenuhan kemajuan fisik lapangan (Termin Payment). Dimulai dengan Down Payment (DP) awal sebelum mobilisasi alat, dilanjutkan dengan termin berkala yang disepakati di dalam surat perjanjian kerja tertulis.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q9">9. Bagaimana skema tahapan pembayaran jasa kontraktor pengerjaan fisik bangunan?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a9">Pembayaran unit kontraktor dilakukan secara bertahap berbasis pemenuhan kemajuan fisik lapangan (Termin Payment). Dimulai dengan Down Payment (DP) awal sebelum mobilisasi alat, dilanjutkan dengan termin berkala yang disepakati di dalam surat perjanjian kerja tertulis.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">10. Apakah ada jaminan garansi pemeliharaan setelah proses serah terima kunci bangunan selesai? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Tentu saja ada. SK STUDIO memberikan komitmen garansi pemeliharaan fisik (Retensi) selama 3 hingga 6 bulan pasca-serah terima kunci guna menanggung risiko jika terjadi kerusakan minor kebocoran atau keretakan rambut struktural.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q10">10. Apakah ada jaminan garansi pemeliharaan setelah proses serah terima kunci bangunan selesai?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a10">Tentu saja ada. SK STUDIO memberikan komitmen garansi pemeliharaan fisik (Retensi) selama 3 hingga 6 bulan pasca-serah terima kunci guna menanggung risiko jika terjadi kerusakan minor kebocoran atau keretakan rambut struktural.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">11. Apa perbedaan mendasar fungsi kerja arsitek dengan desainer interior di studio Anda? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Arsitek kami fokus pada rancang bangun eksterior fasad, pembagian blok denah zonasi, sirkulasi udara makro, serta aspek kekuatan mekanikal struktur. Sedangkan desainer interior berfokus pada estetika mikro dalam ruang, dekorasi pencahayaan, pemilihan ornamen dinding, hingga integrasi mebel.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q11">11. Apa perbedaan mendasar fungsi kerja arsitek dengan desainer interior di studio Anda?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a11">Arsitek kami fokus pada rancang bangun eksterior fasad, pembagian blok denah zonasi, sirkulasi udara makro, serta aspek kekuatan mekanikal struktur. Sedangkan desainer interior berfokus pada estetika mikro dalam ruang, dekorasi pencahayaan, pemilihan ornamen dinding, hingga integrasi mebel.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">12. Apakah saya bisa menyewa jasa desain saja tanpa harus menggunakan jasa kontraktor dari SK STUDIO? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Bisa. Kami menghargai kebebasan keputusan klien. Anda diperbolehkan menggunakan layanan jasa perancangan desain arsitektur/interior kami saja, untuk kemudian proses pembangunan fisiknya diserahkan secara mandiri pada tim pemborong eksternal pilihan Anda.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q12">12. Apakah saya bisa menyewa jasa desain saja tanpa harus menggunakan jasa kontraktor dari SK STUDIO?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a12">Bisa. Kami menghargai kebebasan keputusan klien. Anda diperbolehkan menggunakan layanan jasa perancangan desain arsitektur/interior kami saja, untuk kemudian proses pembangunan fisiknya diserahkan secara mandiri pada tim pemborong eksternal pilihan Anda.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">13. Bagaimana cara studio Anda memastikan kualitas material bangunan di lapangan tidak dimanipulasi? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Kami memiliki sistem kendali mutu (Quality Control) berkala serta logbook opname proyek yang mencatat rantai pasok material supplier. Setiap spesifikasi merk semen, besi tulangan, kabel listrik, dan tipe cat yang dikirim ke site wajib lolos verifikasi sesuai kesepakatan dokumen RKS tertulis.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q13">13. Bagaimana cara studio Anda memastikan kualitas material bangunan di lapangan tidak dimanipulasi?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a13">Kami memiliki sistem kendali mutu (Quality Control) berkala serta logbook opname proyek yang mencatat rantai pasok material supplier. Setiap spesifikasi merk semen, besi tulangan, kabel listrik, dan tipe cat yang dikirim ke site wajib lolos verifikasi sesuai kesepakatan dokumen RKS tertulis.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">14. Jenis bangunan komersial apa saja yang pernah ditangani oleh tim SK STUDIO? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Rekam jejak portofolio komersial kami mencakup perencanaan dan perbaikan interior butik ritel modern, cafe/restoran estetik, ruang kantor korporasi, gedung klinik kecantikan, hingga unit permodelan mock-up kamar apartemen.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q14">14. Jenis bangunan komersial apa saja yang pernah ditangani oleh tim SK STUDIO?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a14">Rekam jejak portofolio komersial kami mencakup perencanaan dan perbaikan interior butik ritel modern, cafe/restoran estetik, ruang kantor korporasi, gedung klinik kecantikan, hingga unit permodelan mock-up kamar apartemen.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">15. Apakah tim survei lapangan akan dikenakan biaya akomodasi tambahan? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Untuk wilayah jangkauan operasional inti di area Kota dan Kabupaten Bekasi, kami tidak mengenakan biaya survei lahan awal. Namun, untuk kunjungan survei lokasi di luar Jabodetabek, akan diterapkan tarif biaya akomodasi perjalanan yang disepakati sebelumnya.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q15">15. Apakah tim survei lapangan akan dikenakan biaya akomodasi tambahan?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a15">Untuk wilayah jangkauan operasional inti di area Kota dan Kabupaten Bekasi, kami tidak mengenakan biaya survei lahan awal. Namun, untuk kunjungan survei lokasi di luar Jabodetabek, akan diterapkan tarif biaya akomodasi perjalanan yang disepakati sebelumnya.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">16. Bagaimana kebijakan komitmen SK STUDIO jika terjadi keterlambatan penyelesaian pembangunan fisik? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Seluruh batas waktu pengerjaan proyek dituangkan secara legal dalam lini masa S-Curve kontrak kerja resmi. Apabila terjadi keterlambatan di luar faktor force majeure alam, pihak kontraktor kami terikat pemotongan denda penalti proporsional per hari keterlambatan.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q16">16. Bagaimana kebijakan komitmen SK STUDIO jika terjadi keterlambatan penyelesaian pembangunan fisik?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a16">Seluruh batas waktu pengerjaan proyek dituangkan secara legal dalam lini masa S-Curve kontrak kerja resmi. Apabila terjadi keterlambatan di luar faktor force majeure alam, pihak kontraktor kami terikat pemotongan denda penalti proporsional per hari keterlambatan.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">17. Dapatkah saya mengajukan revisi gambar saat proses pengerjaan konstruksi sudah berjalan? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Revisi di tengah masa konstruksi sangat tidak direkomendasikan karena memicu pembongkaran struktur yang memakan biaya. Namun jika mendesak, hal tersebut akan diakomodasi lewat mekanisme administrasi formal penerbitan Berita Acara Pekerjaan Tambah-Kurang (CCO).</p></div>
+                        <div class="faq-question"><span id="txt-faq-q17">17. Dapatkah saya mengajukan revisi gambar saat proses pengerjaan konstruksi sudah berjalan?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a17">Revisi di tengah masa konstruksi sangat tidak direkomendasikan karena memicu pembongkaran struktur yang memakan biaya. Namun jika mendesak, hal tersebut akan diakomodasi lewat mekanisme administrasi formal penerbitan Berita Acara Pekerjaan Tambah-Kurang (CCO).</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">18. Apakah SK STUDIO melayani pengerjaan renovasi bangunan berskala kecil (minor)? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Untuk mengoptimalkan efisiensi manajemen proyek, saat ini kami memprioritaskan pengerjaan proyek konstruksi bangun baru dari awal lahan kosong, atau proyek renovasi total berskala masif (merombak total struktur fasad/tata ruang bangunan).</p></div>
+                        <div class="faq-question"><span id="txt-faq-q18">18. Apakah SK STUDIO melayani pengerjaan renovasi bangunan berskala kecil (minor)?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a18">Untuk mengoptimalkan efisiensi manajemen proyek, saat ini kami memprioritaskan pengerjaan proyek konstruksi bangun baru dari awal lahan kosong, atau proyek renovasi total berskala masif (merombak total struktur fasad/tata ruang bangunan).</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">19. Bagaimana langkah awal yang harus saya lakukan untuk memulai konsultasi proyek di sini? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Langkahnya sangat mudah, cukup klik ikon WhatsApp di menu bawah website Anda. Tim customer service kami akan membantu mengarahkan penjadwalan diskusi teknis tatap muka langsung di studio maupun pertemuan daring via Google Meet.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q19">19. Bagaimana langkah awal yang harus saya lakukan untuk memulai konsultasi proyek di sini?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a19">Langkahnya sangat mudah, cukup klik ikon WhatsApp di menu bawah website Anda. Tim customer service kami akan membantu mengarahkan penjadwalan diskusi teknis tatap muka langsung di studio maupun pertemuan daring via Google Meet.</p></div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">20. Mengapa saya harus memilih SK STUDIO dibandingkan jasa arsitek pemborong biasa? <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="faq-answer"><p>Karena kami menawarkan komitmen integritas profesional. Kami tidak memberikan janji rancangan murah yang rawan mangkrak, melainkan kepastian kualitas teknik arsitektur berkelas, visual 3D presisi, transparansi anggaran, serta perlindungan jaminan hukum tertulis.</p></div>
+                        <div class="faq-question"><span id="txt-faq-q20">20. Mengapa saya harus memilih SK STUDIO dibandingkan jasa arsitek pemborong biasa?</span> <i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-answer"><p id="txt-faq-a20">Karena kami menawarkan komitmen integritas profesional. Kami tidak memberikan janji rancangan murah yang rawan mangkrak, melainkan kepastian kualitas teknik arsitektur berkelas, visual 3D presisi, transparansi anggaran, serta perlindungan jaminan hukum tertulis.</p></div>
                     </div>
                 </div>
             </section>
@@ -908,31 +954,31 @@
     <div class="container">
         <section id="contact" class="reveal">
             <div class="section-header">
-                <h2>Connect With <span>SK Studio</span></h2>
-                <p>Jadwalkan sesi konsultasi eksklusif bersama prinsipal desainer dan tim insinyur kami.</p>
+                <h2><span id="txt-cont-h2-1">Connect With</span> <span id="txt-cont-h2-2">SK Studio</span></h2>
+                <p id="txt-cont-desc">Jadwalkan sesi konsultasi eksklusif bersama prinsipal desainer dan tim insinyur kami.</p>
             </div>
             <div class="contact-grid">
                 <div class="info-box">
-                    <h3>Informasi Studio</h3>
+                    <h3 id="txt-cont-box-title">Informasi Studio</h3>
                     <div class="info-node">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <h4>Studio Headquarters</h4>
-                            <p>Bekasi, Jawa Barat, Indonesia</p>
+                            <h4 id="txt-cont-loc-title">Studio Headquarters</h4>
+                            <p id="txt-cont-loc-desc">Bekasi, Jawa Barat, Indonesia</p>
                         </div>
                     </div>
                     <div class="info-node">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <h4>Hotline Panggilan & WA</h4>
-                            <p>+62 821-1595-0870</p>
+                            <h4 id="txt-cont-phone-title">Hotline Panggilan & WA</h4>
+                            <p id="txt-cont-phone-desc">+62 821-1595-0870</p>
                         </div>
                     </div>
                     <div class="info-node">
                         <i class="fa-solid fa-clock"></i>
                         <div>
-                            <h4>Jam Operasional</h4>
-                            <p>Senin – Sabtu: 09.00 - 18.00 WIB</p>
+                            <h4 id="txt-cont-time-title">Jam Operasional</h4>
+                            <p id="txt-cont-time-desc">Senin – Sabtu: 09.00 - 18.00 WIB</p>
                         </div>
                     </div>
                 </div>
@@ -948,11 +994,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <h3>SK STUDIO</h3>
-                    <p>Firma tata ruang arsitektur premium, interior eksklusif, dan unit kontraktor terpercaya berintegritas tinggi dengan fokus mahakarya struktur spasial presisi.</p>
+                    <h3 id="txt-foot-title">SK STUDIO</h3>
+                    <p id="txt-foot-desc">Firma tata ruang arsitektur premium, interior eksklusif, dan unit kontraktor terpercaya berintegritas tinggi dengan fokus mahakarya struktur spasial presisi.</p>
                 </div>
                 <div class="footer-nav">
-                    <h4>Navigasi</h4>
+                    <h4 id="txt-foot-nav1-title">Navigasi</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">Profil</a></li>
@@ -961,7 +1007,7 @@
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4>Kredibilitas</h4>
+                    <h4 id="txt-foot-nav2-title">Kredibilitas</h4>
                     <ul>
                         <li><a href="#about">Visi & Misi</a></li>
                         <li><a href="#services">3D High-Fidelity</a></li>
@@ -971,13 +1017,82 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CV. SK-STUDIO. All Rights Reserved.</p>
-                <p>DESIGN & BUILD ATELIER | BEKASI</p>
+                <p id="txt-foot-copy">&copy; 2026 CV. SK-STUDIO. All Rights Reserved.</p>
+                <p id="txt-foot-sub">DESIGN & BUILD ATELIER | BEKASI</p>
             </div>
         </div>
     </footer>
 
+    <!-- ADMIN PANEL UI (LENGKAP FORM TEKS & GAMBAR) -->
+    <div class="admin-panel" id="adminPanel">
+        <h3><span>SK Admin Panel</span><button class="admin-close" onclick="toggleAdminPanel()"><i class="fa-solid fa-xmark"></i></button></h3>
+        <div class="admin-content-scroll">
+            <p style="font-size: 0.75rem; color: var(--text-dim);">Ubah teks dan URL gambar di bawah ini, lalu klik "Terapkan Perubahan".</p>
+            
+            <div class="admin-section-title">Hero Section</div>
+            <div class="admin-group"><label>Judul Utama (H1)</label><input type="text" id="edit-hero-title" value="SK - STUDIO"></div>
+            <div class="admin-group"><label>Subjudul Hero</label><input type="text" id="edit-hero-subtitle" value="KONTRAKTOR &bull; ARSITEKTUR &bull; INTERIOR DESIGNER"></div>
+            <div class="admin-group"><label>Deskripsi Hero</label><textarea id="edit-hero-desc">Konsultan Rancang Bangun Premium. Kami Menghadirkan Jasa Kontraktor Pelaksana Struktur yang Aman, Rancangan Arsitektur Eksklusif, serta Sentuhan Interior Designer Profesional dengan Visualisasi 3D Realistis Tangguh.</textarea></div>
+            
+            <div class="admin-section-title">About Section</div>
+            <div class="admin-group"><label>Judul About</label><input type="text" id="edit-about-title" value="ABOUT US"></div>
+            <div class="admin-group"><label>Subjudul About</label><input type="text" id="edit-about-subtitle" value="Presisi Desain & Integritas Fisik"></div>
+            <div class="admin-group"><label>Paragraf 1 About</label><textarea id="edit-about-p1">Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</textarea></div>
+            <div class="admin-group"><label>Paragraf 2 About</label><textarea id="edit-about-p2">Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</textarea></div>
+
+            <div class="admin-section-title">Foto / Gambar Website</div>
+            <div class="admin-group"><label>Gambar Profil (About)</label><input type="text" id="input-img-about" value="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1470&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 1</label><input type="text" id="input-img-port-1" value="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1475&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 2</label><input type="text" id="input-img-port-2" value="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1470&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 3</label><input type="text" id="input-img-port-3" value="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1496&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 4</label><input type="text" id="input-img-port-4" value="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1453&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 5</label><input type="text" id="input-img-port-5" value="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1374&auto=format&fit=crop"></div>
+            <div class="admin-group"><label>Gambar Portofolio 6</label><input type="text" id="input-img-port-6" value="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop"></div>
+
+            <button class="admin-btn-save" onclick="saveAdminChanges()">Terapkan Perubahan</button>
+        </div>
+    </div>
+
     <script>
+        // --- PASSWORD AUTHENTICATION & ADMIN PANEL LOGIC ---
+        function requestAdminAccess() {
+            const password = prompt("Masukkan Password Admin:");
+            if (password === "sk17") {
+                toggleAdminPanel();
+            } else if (password !== null) {
+                alert("Password salah!");
+            }
+        }
+
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('open');
+        }
+
+        function saveAdminChanges() {
+            // Update Teks
+            document.getElementById('txt-hero-title').innerText = document.getElementById('edit-hero-title').value;
+            document.getElementById('txt-hero-subtitle').innerHTML = document.getElementById('edit-hero-subtitle').value;
+            document.getElementById('txt-hero-desc').innerText = document.getElementById('edit-hero-desc').value;
+            
+            document.getElementById('txt-about-title').innerText = document.getElementById('edit-about-title').value;
+            document.getElementById('txt-about-subtitle').innerText = document.getElementById('edit-about-subtitle').value;
+            document.getElementById('txt-about-p1').innerText = document.getElementById('edit-about-p1').value;
+            document.getElementById('txt-about-p2').innerText = document.getElementById('edit-about-p2').value;
+
+            // Update Gambar
+            document.getElementById('img-about').src = document.getElementById('input-img-about').value;
+            document.getElementById('img-port-1').src = document.getElementById('input-img-port-1').value;
+            document.getElementById('img-port-2').src = document.getElementById('input-img-port-2').value;
+            document.getElementById('img-port-3').src = document.getElementById('input-img-port-3').value;
+            document.getElementById('img-port-4').src = document.getElementById('input-img-port-4').value;
+            document.getElementById('img-port-5').src = document.getElementById('input-img-port-5').value;
+            document.getElementById('img-port-6').src = document.getElementById('input-img-port-6').value;
+            
+            alert('Perubahan berhasil diterapkan!');
+            toggleAdminPanel();
+        }
+
         // --- LOADER & TEXT SLIDER SCRIPT ---
         document.addEventListener("DOMContentLoaded", () => {
             const loaderTexts = document.querySelectorAll('.loader-text-item');
