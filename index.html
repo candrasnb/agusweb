@@ -78,108 +78,23 @@
 
         /* --- INITIAL LOADING SCREEN --- */
         #loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: #09090b;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: #09090b; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 99999;
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
-        #loader-wrapper.fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .loader-content-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transform: translateY(-10px);
-        }
-        .loader-circle-box {
-            position: relative;
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .loader-circle-box::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: conic-gradient(transparent, transparent, var(--gold));
-            animation: loaderSpin 1.5s linear infinite;
-        }
-        .loader-circle-box::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: #09090b;
-            border-radius: 50%;
-        }
-        .loader-logo-inner {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        .loader-logo-letters {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: #fff;
-            letter-spacing: -2px;
-            display: block;
-            line-height: 1;
-            margin-bottom: 2px;
-        }
-        .loader-logo-sub {
-            font-family: 'Cinzel', serif;
-            font-weight: 600;
-            font-size: 0.4rem;
-            color: var(--gold);
-            letter-spacing: 3px;
-            display: block;
-        }
-        .loader-text-slider {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            height: 25px;
-            position: relative;
-            width: 280px;
-            text-align: center;
-        }
-        .loader-text-item {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            position: absolute;
-            width: 100%;
-            left: 0;
-        }
-        .loader-text-item.active-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes loaderSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        #loader-wrapper.fade-out { opacity: 0; visibility: hidden; }
+        .loader-content-center { display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; transform: translateY(-10px); }
+        .loader-circle-box { position: relative; width: 95px; height: 95px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .loader-circle-box::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: conic-gradient(transparent, transparent, var(--gold)); animation: loaderSpin 1.5s linear infinite; }
+        .loader-circle-box::after { content: ''; position: absolute; inset: 0; background: #09090b; border-radius: 50%; }
+        .loader-logo-inner { position: relative; z-index: 2; text-align: center; }
+        .loader-logo-letters { font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.8rem; color: #fff; letter-spacing: -2px; display: block; line-height: 1; margin-bottom: 2px; }
+        .loader-logo-sub { font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.4rem; color: var(--gold); letter-spacing: 3px; display: block; }
+        .loader-text-slider { font-family: 'Cinzel', serif; font-size: 0.85rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.25em; height: 25px; position: relative; width: 280px; text-align: center; }
+        .loader-text-item { display: inline-block; opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease; position: absolute; width: 100%; left: 0; }
+        .loader-text-item.active-text { opacity: 1; transform: translateY(0); }
+        @keyframes loaderSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* --- HEADER & NAVIGATION --- */
         header {
@@ -188,24 +103,19 @@
             border-bottom: 1px solid var(--border);
         }
         .header-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
-        
         .header-logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-white); }
         .header-logo-circle {
             width: 44px; height: 44px; background: #09090b; border-radius: 50%;
-            border: 1px solid var(--border-gold);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border: 1px solid var(--border-gold); display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .header-logo-letters { font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: -1.5px; margin-bottom: -2px; margin-right: -1px; }
         .header-logo-subtext { font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.24rem; color: var(--gold); letter-spacing: 2px; margin-right: -2px; }
-
         .logo-text-side { display: flex; flex-direction: column; }
         .logo-text-brand { font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
         .logo-text-sub { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-top: -1px; font-weight: 600; }
-        
         .header-actions { display: flex; align-items: center; gap: 15px; }
         .admin-header-btn { background: none; border: 1px solid var(--border-gold); color: var(--gold); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; transition: 0.3s; }
         .admin-header-btn:hover { background: var(--gold); color: #0c0c0e; }
-
         .menu-trigger { background: none; border: none; color: var(--text-white); font-size: 1.4rem; cursor: pointer; transition: 0.3s; }
         .menu-trigger:hover { color: var(--gold); }
 
@@ -250,61 +160,28 @@
             display: flex; align-items: center; justify-content: center; padding: 130px 20px 60px; text-align: center;
         }
         .hero-content { width: 100%; max-width: 850px; z-index: 2; }
-        
         .hero h1 { 
-            font-size: clamp(2.2rem, 8vw, 4.2rem); 
-            font-weight: 700; 
-            line-height: 1.1; 
-            margin-bottom: 15px; 
-            text-transform: uppercase; 
-            color: #ffffff;
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+            font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 700; line-height: 1.1; 
+            margin-bottom: 15px; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em;
+            white-space: nowrap; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
             animation: luxuryEntrance 1.8s var(--transition-premium) forwards;
         }
-        
         .hero-subtitle-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            white-space: nowrap; 
-            font-size: clamp(0.48rem, 2.8vw, 0.85rem); 
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--gold);
-            margin-bottom: 30px;
-            padding: 0 5px;
+            display: flex; justify-content: center; align-items: center; width: 100%;
+            white-space: nowrap; font-size: clamp(0.48rem, 2.8vw, 0.85rem); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 30px; padding: 0 5px;
         }
-
-        @keyframes luxuryEntrance {
-            0% { opacity: 0; transform: scale(0.97); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .hero p { 
-            font-size: 1.05rem; 
-            color: var(--text-dim); 
-            max-width: 680px; 
-            margin: 0 auto 40px; 
-            font-weight: 400; 
-            line-height: 1.75; 
-        }
-        
+        @keyframes luxuryEntrance { 0% { opacity: 0; transform: scale(0.97); } 100% { opacity: 1; transform: scale(1); } }
+        .hero p { font-size: 1.05rem; color: var(--text-dim); max-width: 680px; margin: 0 auto 40px; font-weight: 400; line-height: 1.75; }
         .hero-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         .social-circle {
             width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center; 
-            color: var(--text-white); 
-            text-decoration: none;
-            font-size: 1.2rem; transition: 0.3s; background: var(--bg-card);
+            display: flex; align-items: center; justify-content: center; color: var(--text-white); 
+            text-decoration: none; font-size: 1.2rem; transition: 0.3s; background: var(--bg-card);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .social-circle:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
 
-        /* --- TOMBOL KONSULTASI EKSKLUSIF --- */
         .btn-flash-container {
             position: relative; display: inline-block; padding: 2px; border-radius: 8px;
             overflow: hidden; z-index: 1; box-shadow: 0 10px 30px rgba(223, 186, 71, 0.25);
@@ -325,11 +202,7 @@
         }
         .btn-flash-container:hover::after { background: var(--gold); }
         .btn-flash-container:hover .btn-gold { background: transparent; color: #ffffff; }
-        
-        @keyframes borderFlash {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes borderFlash { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         section { padding: 100px 0; }
         .section-header { text-align: center; margin-bottom: 60px; padding: 0 20px; }
@@ -343,11 +216,10 @@
         .about-text h3 { font-size: 1.35rem; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
         .about-text p { color: var(--text-dim); margin-bottom: 18px; font-weight: 400; text-align: justify; font-size: 0.95rem; line-height: 1.75; }
         .about-img img { width: 100%; height: auto; border-radius: var(--radius-premium); border: 1px solid var(--border); display: block; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
-        
         .about-badge {
             display: flex; align-items: center; gap: 15px; background: var(--bg-card);
             padding: 20px; border-left: 4px solid var(--gold); border-radius: 0 var(--radius-premium) var(--radius-premium) 0; margin-top: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid var(--border); border-left-color: var(--gold);
         }
         .about-badge i { font-size: 1.8rem; color: var(--gold); }
         .about-badge h4 { font-size: 0.95rem; color: var(--text-white); margin-bottom: 2px; }
@@ -356,16 +228,12 @@
         /* --- SERVICES --- */
         .services-bg { background: #111115; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        
         .service-card {
             background: var(--bg-card); padding: 45px 30px; border-radius: var(--radius-premium);
             border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: opacity 0.8s ease, transform 0.8s var(--transition-premium);
+            opacity: 0; transform: translateX(-60px); transition: opacity 0.8s ease, transform 0.8s var(--transition-premium);
         }
         .service-card.slide-active { opacity: 1; transform: translateX(0); }
-        
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(223, 186, 71, 0.1); }
         .service-card i { font-size: 2.2rem; color: var(--gold); margin-bottom: 25px; display: inline-block; }
         .service-card h3 { font-size: 1.3rem; color: var(--text-white); margin-bottom: 15px; }
@@ -374,16 +242,12 @@
         /* --- PROCESS --- */
         .process-section-wrapper { overflow: hidden; }
         .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        
         .process-card { 
             background: var(--bg-card); padding: 35px 20px; border-radius: var(--radius-premium); 
             border: 1px solid var(--border); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            opacity: 0;
-            transform: translateX(60px);
-            transition: opacity 0.8s ease, transform 0.8s var(--transition-premium);
+            opacity: 0; transform: translateX(60px); transition: opacity 0.8s ease, transform 0.8s var(--transition-premium);
         }
         .process-card.slide-active { opacity: 1; transform: translateX(0); }
-
         .process-step {
             width: 42px; height: 42px; background: var(--gold); color: #0c0c0e;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -446,7 +310,6 @@
         .info-node i { font-size: 1.2rem; color: var(--gold); margin-top: 3px; }
         .info-node h4 { font-weight: 600; margin-bottom: 4px; color: var(--text-white); font-size: 0.95rem; }
         .info-node p { color: var(--text-dim); font-size: 0.85rem; font-weight: 400; }
-        
         .map-box { border-radius: var(--radius-premium); overflow: hidden; border: 1px solid var(--border); min-height: 380px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         .map-box iframe { width: 100%; height: 100%; border: 0; display: block; filter: invert(90%) hue-rotate(180deg); }
 
@@ -466,23 +329,12 @@
         .reveal { opacity: 0; transform: translateY(25px); transition: all 0.7s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- ADMIN PANEL & FORM EDITOR STYLES --- */
+        /* --- ADMIN PANEL & BROWSE FILE STYLES --- */
         .admin-panel {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            max-width: 420px;
-            height: 100vh;
-            background: rgba(12, 12, 14, 0.98);
-            backdrop-filter: blur(25px);
-            z-index: 10000;
-            border-right: 1px solid var(--border-gold);
-            padding: 25px 20px;
-            transition: left 0.4s var(--transition-premium);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            position: fixed; top: 0; left: -100%; width: 100%; max-width: 420px; height: 100vh;
+            background: rgba(12, 12, 14, 0.98); backdrop-filter: blur(25px); z-index: 10000;
+            border-right: 1px solid var(--border-gold); padding: 25px 20px;
+            transition: left 0.4s var(--transition-premium); display: flex; flex-direction: column; gap: 20px;
             box-shadow: 10px 0 30px rgba(0,0,0,0.8);
         }
         .admin-panel.open { left: 0; }
@@ -495,13 +347,11 @@
         .admin-group input, .admin-group textarea { background: #0c0c0e; border: 1px solid var(--border); color: #fff; padding: 10px; border-radius: 6px; font-size: 0.85rem; width: 100%; }
         .admin-group textarea { resize: vertical; min-height: 70px; }
         .admin-group input:focus, .admin-group textarea:focus { border-color: var(--gold); outline: none; }
+        .admin-file-input { border: 1px dashed var(--border-gold); padding: 8px; border-radius: 6px; background: rgba(223, 186, 71, 0.05); cursor: pointer; font-size: 0.8rem; color: var(--gold); }
         .admin-btn-save { background: var(--gold); color: #0c0c0e; border: none; padding: 12px; font-weight: 700; text-transform: uppercase; border-radius: 6px; cursor: pointer; transition: 0.3s; margin-top: 15px; width: 100%; }
         .admin-btn-save:hover { background: #fff; }
 
-        @media (max-width: 480px) {
-            .admin-panel { max-width: 100%; width: 100%; }
-        }
-
+        @media (max-width: 480px) { .admin-panel { max-width: 100%; width: 100%; } }
         @media (max-width: 992px) {
             .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
@@ -573,7 +423,6 @@
             </a>
             
             <div class="header-actions">
-                <!-- Tombol Admin di Pojok Kanan Atas -->
                 <button class="admin-header-btn" onclick="requestAdminAccess()" title="Admin Login"><i class="fa-solid fa-lock"></i></button>
                 <button class="menu-trigger" onclick="toggleSidebar()"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
@@ -1023,11 +872,11 @@
         </div>
     </footer>
 
-    <!-- ADMIN PANEL UI (LENGKAP FORM TEKS & GAMBAR) -->
+    <!-- ADMIN PANEL UI DENGAN BROWSE FILE & KOMPRESI <100KB -->
     <div class="admin-panel" id="adminPanel">
         <h3><span>SK Admin Panel</span><button class="admin-close" onclick="toggleAdminPanel()"><i class="fa-solid fa-xmark"></i></button></h3>
         <div class="admin-content-scroll">
-            <p style="font-size: 0.75rem; color: var(--text-dim);">Ubah teks dan URL gambar di bawah ini, lalu klik "Terapkan Perubahan".</p>
+            <p style="font-size: 0.75rem; color: var(--text-dim);">Ubah teks atau pilih file gambar langsung dari HP (otomatis dikompres di bawah 100KB).</p>
             
             <div class="admin-section-title">Hero Section</div>
             <div class="admin-group"><label>Judul Utama (H1)</label><input type="text" id="edit-hero-title" value="SK - STUDIO"></div>
@@ -1040,21 +889,155 @@
             <div class="admin-group"><label>Paragraf 1 About</label><textarea id="edit-about-p1">Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</textarea></div>
             <div class="admin-group"><label>Paragraf 2 About</label><textarea id="edit-about-p2">Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</textarea></div>
 
-            <div class="admin-section-title">Foto / Gambar Website</div>
-            <div class="admin-group"><label>Gambar Profil (About)</label><input type="text" id="input-img-about" value="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1470&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 1</label><input type="text" id="input-img-port-1" value="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1475&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 2</label><input type="text" id="input-img-port-2" value="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1470&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 3</label><input type="text" id="input-img-port-3" value="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1496&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 4</label><input type="text" id="input-img-port-4" value="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1453&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 5</label><input type="text" id="input-img-port-5" value="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1374&auto=format&fit=crop"></div>
-            <div class="admin-group"><label>Gambar Portofolio 6</label><input type="text" id="input-img-port-6" value="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop"></div>
+            <div class="admin-section-title">Upload Gambar (Otomatis <100KB)</div>
+            <div class="admin-group">
+                <label>Foto Profil (About)</label>
+                <input type="file" class="admin-file-input" id="file-about" accept="image/*" onchange="compressAndStore(this, 'imgAboutUrl')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 1</label>
+                <input type="file" class="admin-file-input" id="file-port-1" accept="image/*" onchange="compressAndStore(this, 'imgPort1Url')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 2</label>
+                <input type="file" class="admin-file-input" id="file-port-2" accept="image/*" onchange="compressAndStore(this, 'imgPort2Url')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 3</label>
+                <input type="file" class="admin-file-input" id="file-port-3" accept="image/*" onchange="compressAndStore(this, 'imgPort3Url')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 4</label>
+                <input type="file" class="admin-file-input" id="file-port-4" accept="image/*" onchange="compressAndStore(this, 'imgPort4Url')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 5</label>
+                <input type="file" class="admin-file-input" id="file-port-5" accept="image/*" onchange="compressAndStore(this, 'imgPort5Url')">
+            </div>
+            <div class="admin-group">
+                <label>Foto Portofolio 6</label>
+                <input type="file" class="admin-file-input" id="file-port-6" accept="image/*" onchange="compressAndStore(this, 'imgPort6Url')">
+            </div>
 
-            <button class="admin-btn-save" onclick="saveAdminChanges()">Terapkan Perubahan</button>
+            <button class="admin-btn-save" onclick="saveAdminChanges()">Terapkan & Simpan ke Firebase</button>
         </div>
     </div>
 
+    <!-- Firebase SDK & Database Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA91czrwVdf5tHSzwpFJpxJ1uY9ZlmBoR4",
+            authDomain: "agusweb-f3683.firebaseapp.com",
+            projectId: "agusweb-f3683",
+            storageBucket: "agusweb-f3683.firebasestorage.app",
+            messagingSenderId: "802645700307",
+            appId: "1:802645700307:web:e98adf2e808c4868e1ae26",
+            measurementId: "G-QXJQG1D9K3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Simpan fungsi ke window agar bisa dipanggil HTML luar
+        window.saveToFirebase = async function(dataObj) {
+            try {
+                await setDoc(doc(db, "websiteContent", "mainData"), dataObj);
+                alert("Berhasil! Data dan gambar tersimpan permanen ke Firebase.");
+                toggleAdminPanel();
+            } catch (error) {
+                console.error("Gagal menyimpan: ", error);
+                alert("Gagal menyimpan ke Firebase.");
+            }
+        };
+
+        window.loadFromFirebase = async function() {
+            try {
+                const docSnap = await getDoc(doc(db, "websiteContent", "mainData"));
+                if (docSnap.exists()) {
+                    const d = docSnap.data();
+                    if(d.heroTitle) document.getElementById('txt-hero-title').innerText = d.heroTitle;
+                    if(d.heroSubtitle) document.getElementById('txt-hero-subtitle').innerHTML = d.heroSubtitle;
+                    if(d.heroDesc) document.getElementById('txt-hero-desc').innerText = d.heroDesc;
+                    if(d.aboutTitle) document.getElementById('txt-about-title').innerText = d.aboutTitle;
+                    if(d.aboutSubtitle) document.getElementById('txt-about-subtitle').innerText = d.aboutSubtitle;
+                    if(d.aboutP1) document.getElementById('txt-about-p1').innerText = d.aboutP1;
+                    if(d.aboutP2) document.getElementById('txt-about-p2').innerText = d.aboutP2;
+
+                    if(d.imgAboutUrl) document.getElementById('img-about').src = d.imgAboutUrl;
+                    if(d.imgPort1Url) document.getElementById('img-port-1').src = d.imgPort1Url;
+                    if(d.imgPort2Url) document.getElementById('img-port-2').src = d.imgPort2Url;
+                    if(d.imgPort3Url) document.getElementById('img-port-3').src = d.imgPort3Url;
+                    if(d.imgPort4Url) document.getElementById('img-port-4').src = d.imgPort4Url;
+                    if(d.imgPort5Url) document.getElementById('img-port-5').src = d.imgPort5Url;
+                    if(d.imgPort6Url) document.getElementById('img-port-6').src = d.imgPort6Url;
+                }
+            } catch (error) {
+                console.log("Memuat data lokal awal...");
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            window.loadFromFirebase();
+        });
+    </script>
+
     <script>
-        // --- PASSWORD AUTHENTICATION & ADMIN PANEL LOGIC ---
+        // Variabel penampung hasil kompresi gambar sementara
+        let uploadedImages = {};
+
+        // Fungsi kompresi gambar otomatis di bawah 100KB
+        function compressAndStore(inputElement, dataKey) {
+            const file = inputElement.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+
+                    // Batasi dimensi maksimal agar ukuran file kecil
+                    const MAX_WIDTH = 800;
+                    const MAX_HEIGHT = 800;
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height;
+                            height = MAX_HEIGHT;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // Kompres kualitas bertahap sampai ukurannya di bawah 100KB
+                    let quality = 0.7;
+                    let dataUrl = canvas.toDataURL('image/jpeg', quality);
+
+                    while (dataUrl.length > 100 * 1024 && quality > 0.1) {
+                        quality -= 0.1;
+                        dataUrl = canvas.toDataURL('image/jpeg', quality);
+                    }
+
+                    uploadedImages[dataKey] = dataUrl;
+                    alert("Gambar berhasil dipilih & dikompres di bawah 100KB!");
+                }
+            }
+        }
+
         function requestAdminAccess() {
             const password = prompt("Masukkan Password Admin:");
             if (password === "sk17") {
@@ -1070,34 +1053,31 @@
         }
 
         function saveAdminChanges() {
-            // Update Teks
-            document.getElementById('txt-hero-title').innerText = document.getElementById('edit-hero-title').value;
-            document.getElementById('txt-hero-subtitle').innerHTML = document.getElementById('edit-hero-subtitle').value;
-            document.getElementById('txt-hero-desc').innerText = document.getElementById('edit-hero-desc').value;
-            
-            document.getElementById('txt-about-title').innerText = document.getElementById('edit-about-title').value;
-            document.getElementById('txt-about-subtitle').innerText = document.getElementById('edit-about-subtitle').value;
-            document.getElementById('txt-about-p1').innerText = document.getElementById('edit-about-p1').value;
-            document.getElementById('txt-about-p2').innerText = document.getElementById('edit-about-p2').value;
+            const dataToSave = {
+                heroTitle: document.getElementById('edit-hero-title').value,
+                heroSubtitle: document.getElementById('edit-hero-subtitle').value,
+                heroDesc: document.getElementById('edit-hero-desc').value,
+                aboutTitle: document.getElementById('edit-about-title').value,
+                aboutSubtitle: document.getElementById('edit-about-subtitle').value,
+                aboutP1: document.getElementById('edit-about-p1').value,
+                aboutP2: document.getElementById('edit-about-p2').value,
+                imgAboutUrl: uploadedImages['imgAboutUrl'] || document.getElementById('img-about').src,
+                imgPort1Url: uploadedImages['imgPort1Url'] || document.getElementById('img-port-1').src,
+                imgPort2Url: uploadedImages['imgPort2Url'] || document.getElementById('img-port-2').src,
+                imgPort3Url: uploadedImages['imgPort3Url'] || document.getElementById('img-port-3').src,
+                imgPort4Url: uploadedImages['imgPort4Url'] || document.getElementById('img-port-4').src,
+                imgPort5Url: uploadedImages['imgPort5Url'] || document.getElementById('img-port-5').src,
+                imgPort6Url: uploadedImages['imgPort6Url'] || document.getElementById('img-port-6').src
+            };
 
-            // Update Gambar
-            document.getElementById('img-about').src = document.getElementById('input-img-about').value;
-            document.getElementById('img-port-1').src = document.getElementById('input-img-port-1').value;
-            document.getElementById('img-port-2').src = document.getElementById('input-img-port-2').value;
-            document.getElementById('img-port-3').src = document.getElementById('input-img-port-3').value;
-            document.getElementById('img-port-4').src = document.getElementById('input-img-port-4').value;
-            document.getElementById('img-port-5').src = document.getElementById('input-img-port-5').value;
-            document.getElementById('img-port-6').src = document.getElementById('input-img-port-6').value;
-            
-            alert('Perubahan berhasil diterapkan!');
-            toggleAdminPanel();
+            // Panggil fungsi simpan ke Firebase
+            window.saveToFirebase(dataToSave);
         }
 
-        // --- LOADER & TEXT SLIDER SCRIPT ---
+        // --- SCRIPT PENDUKUNG WEBSITE ---
         document.addEventListener("DOMContentLoaded", () => {
             const loaderTexts = document.querySelectorAll('.loader-text-item');
             let textIndex = 0;
-            
             const textInterval = setInterval(() => {
                 loaderTexts[textIndex].classList.remove('active-text');
                 textIndex = (textIndex + 1) % loaderTexts.length;
@@ -1131,9 +1111,7 @@
         const leftSlideObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('slide-active');
-                    }, index * 120);
+                    setTimeout(() => { entry.target.classList.add('slide-active'); }, index * 120);
                     leftSlideObserver.unobserve(entry.target);
                 }
             });
@@ -1144,9 +1122,7 @@
         const rightSlideObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('slide-active');
-                    }, index * 120);
+                    setTimeout(() => { entry.target.classList.add('slide-active'); }, index * 120);
                     rightSlideObserver.unobserve(entry.target);
                 }
             });
@@ -1172,7 +1148,6 @@
         function showSlide(index) {
             slides.forEach(s => s.classList.remove('active'));
             dots.forEach(d => d.classList.remove('active'));
-            
             slides[index].classList.add('active');
             dots[index].classList.add('active');
             currentSlideIndex = index;
@@ -1214,16 +1189,13 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             const stats = document.querySelectorAll('.stat-number');
-            
             stats.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-target'));
                 const randomBonus = target > 10 ? Math.floor(Math.random() * 16) : Math.floor(Math.random() * 2);
                 const finalTarget = target + randomBonus;
-                
                 const updateCount = () => {
                     const current = parseInt(stat.innerText);
                     const increment = Math.ceil(finalTarget / 80);
-                    
                     if (current < finalTarget) {
                         stat.innerText = Math.min(current + increment, finalTarget);
                         setTimeout(updateCount, 25);
@@ -1231,7 +1203,6 @@
                         stat.innerText = finalTarget + (target > 10 ? "+" : "");
                     }
                 };
-                
                 updateCount();
             });
         });
