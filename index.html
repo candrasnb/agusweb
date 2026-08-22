@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://www.sk-studio17.com/">
     <meta property="og:title" content="SK STUDIO | Jasa Kontraktor, Arsitektur & Interior Designer Premium">
     <meta property="og:description" content="Layanan satu atap untuk Kontraktor Pelaksana, Desain Arsitektur, dan Interior Designer Rumah Mewah. Presisi Gambar 3D & Kepastian Konstruksi Lapangan.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop">
+    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD2TKg0lqo6gKVk10xrfjc7uIF5l379JREgqdHh4seXYP1HJZUA9Q8oLnMpZh16ZRZEgC3REyYfYr2I5Hwbkb8IqgIpA9qIDAMkrO4nEALI2dW1f8qckvZ7S6wscf6ApHW9Vw1KhTtiYlF71XC7xV2mgSALm6uvbfzvYc0PMP5falb-sSOpboq89fffKuV/s1080/1000531837.jpg">
 
     <!-- JSON-LD Structured Data Schema -->
     <script type="application/ld+json">
@@ -26,7 +26,7 @@
       "@type": "LocalBusiness",
       "name": "SK STUDIO",
       "legalName": "CV. SK-STUDIO",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD2TKg0lqo6gKVk10xrfjc7uIF5l379JREgqdHh4seXYP1HJZUA9Q8oLnMpZh16ZRZEgC3REyYfYr2I5Hwbkb8IqgIpA9qIDAMkrO4nEALI2dW1f8qckvZ7S6wscf6ApHW9Vw1KhTtiYlF71XC7xV2mgSALm6uvbfzvYc0PMP5falb-sSOpboq89fffKuV/s1080/1000531837.jpg",
       "url": "https://www.sk-studio17.com/",
       "telephone": "+6282115950870",
       "email": "web.skstudio17@gmail.com",
@@ -85,16 +85,11 @@
         }
         #loader-wrapper.fade-out { opacity: 0; visibility: hidden; }
         .loader-content-center { display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; transform: translateY(-10px); }
-        .loader-circle-box { position: relative; width: 95px; height: 95px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .loader-circle-box::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: conic-gradient(transparent, transparent, var(--gold)); animation: loaderSpin 1.5s linear infinite; }
-        .loader-circle-box::after { content: ''; position: absolute; inset: 0; background: #09090b; border-radius: 50%; }
-        .loader-logo-inner { position: relative; z-index: 2; text-align: center; }
-        .loader-logo-letters { font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.8rem; color: #fff; letter-spacing: -2px; display: block; line-height: 1; margin-bottom: 2px; }
-        .loader-logo-sub { font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.4rem; color: var(--gold); letter-spacing: 3px; display: block; }
+        .loader-circle-box { position: relative; width: 95px; height: 95px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border-gold); }
+        .loader-circle-box img { width: 100%; height: 100%; object-fit: cover; }
         .loader-text-slider { font-family: 'Cinzel', serif; font-size: 0.85rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.25em; height: 25px; position: relative; width: 280px; text-align: center; }
         .loader-text-item { display: inline-block; opacity: 0; transform: translateY(15px); transition: opacity 0.4s ease, transform 0.4s ease; position: absolute; width: 100%; left: 0; }
         .loader-text-item.active-text { opacity: 1; transform: translateY(0); }
-        @keyframes loaderSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* --- HEADER & NAVIGATION --- */
         header {
@@ -106,10 +101,9 @@
         .header-logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-white); }
         .header-logo-circle {
             width: 44px; height: 44px; background: #09090b; border-radius: 50%;
-            border: 1px solid var(--border-gold); display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; overflow: hidden;
         }
-        .header-logo-letters { font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: -1.5px; margin-bottom: -2px; margin-right: -1px; }
-        .header-logo-subtext { font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.24rem; color: var(--gold); letter-spacing: 2px; margin-right: -2px; }
+        .header-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
         .logo-text-side { display: flex; flex-direction: column; }
         .logo-text-brand { font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
         .logo-text-sub { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold); margin-top: -1px; font-weight: 600; }
@@ -216,14 +210,10 @@
         .about-text h3 { font-size: 1.35rem; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
         .about-text p { color: var(--text-dim); margin-bottom: 18px; font-weight: 400; text-align: justify; font-size: 0.95rem; line-height: 1.75; }
         .about-img img { width: 100%; height: auto; border-radius: var(--radius-premium); border: 1px solid var(--border); display: block; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
-        .about-badge {
-            display: flex; align-items: center; gap: 15px; background: var(--bg-card);
-            padding: 20px; border-left: 4px solid var(--gold); border-radius: 0 var(--radius-premium) var(--radius-premium) 0; margin-top: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid var(--border); border-left-color: var(--gold);
-        }
-        .about-badge i { font-size: 1.8rem; color: var(--gold); }
-        .about-badge h4 { font-size: 0.95rem; color: var(--text-white); margin-bottom: 2px; }
-        .about-badge p { margin: 0; font-size: 0.8rem; color: var(--text-dim); }
+        
+        .about-content-box { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .about-content-box h4 { color: var(--gold); font-size: 1.1rem; margin-top: 10px; text-transform: uppercase; }
+        .about-content-box p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; text-align: justify; margin-bottom: 5px; }
 
         /* --- SERVICES --- */
         .services-bg { background: #111115; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
@@ -331,7 +321,7 @@
 
         /* --- ADMIN PANEL & BROWSE FILE STYLES --- */
         .admin-panel {
-            position: fixed; top: 0; left: -100%; width: 100%; max-width: 420px; height: 100vh;
+            position: fixed; top: 0; left: -100%; width: 100%; max-width: 450px; height: 100vh;
             background: rgba(12, 12, 14, 0.98); backdrop-filter: blur(25px); z-index: 10000;
             border-right: 1px solid var(--border-gold); padding: 25px 20px;
             transition: left 0.4s var(--transition-premium); display: flex; flex-direction: column; gap: 20px;
@@ -341,7 +331,7 @@
         .admin-panel h3 { font-size: 1.1rem; color: var(--gold); text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
         .admin-close { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; padding: 5px; }
         .admin-content-scroll { overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 15px; padding-right: 5px; }
-        .admin-section-title { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-top: 10px; border-bottom: 1px dashed var(--border); padding-bottom: 4px; }
+        .admin-section-title { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-top: 10px; border-bottom: 1px dashed var(--border); padding-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
         .admin-group { display: flex; flex-direction: column; gap: 5px; }
         .admin-group label { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; }
         .admin-group input, .admin-group textarea { background: #0c0c0e; border: 1px solid var(--border); color: #fff; padding: 10px; border-radius: 6px; font-size: 0.85rem; width: 100%; }
@@ -350,6 +340,7 @@
         .admin-file-input { border: 1px dashed var(--border-gold); padding: 8px; border-radius: 6px; background: rgba(223, 186, 71, 0.05); cursor: pointer; font-size: 0.8rem; color: var(--gold); }
         .admin-btn-save { background: var(--gold); color: #0c0c0e; border: none; padding: 12px; font-weight: 700; text-transform: uppercase; border-radius: 6px; cursor: pointer; transition: 0.3s; margin-top: 15px; width: 100%; }
         .admin-btn-save:hover { background: #fff; }
+        .admin-btn-delete { background: #ef4444; color: #fff; border: none; padding: 4px 8px; font-size: 0.65rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
 
         @media (max-width: 480px) { .admin-panel { max-width: 100%; width: 100%; } }
         @media (max-width: 992px) {
@@ -372,10 +363,7 @@
     <div id="loader-wrapper">
         <div class="loader-content-center">
             <div class="loader-circle-box">
-                <div class="loader-logo-inner">
-                    <span class="loader-logo-letters">SK</span>
-                    <span class="loader-logo-sub">STUDIO</span>
-                </div>
+                <img id="img-loader-logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD2TKg0lqo6gKVk10xrfjc7uIF5l379JREgqdHh4seXYP1HJZUA9Q8oLnMpZh16ZRZEgC3REyYfYr2I5Hwbkb8IqgIpA9qIDAMkrO4nEALI2dW1f8qckvZ7S6wscf6ApHW9Vw1KhTtiYlF71XC7xV2mgSALm6uvbfzvYc0PMP5falb-sSOpboq89fffKuV/s1080/1000531837.jpg" alt="Logo">
             </div>
             <div class="loader-text-slider">
                 <span class="loader-text-item active-text">Kontraktor</span>
@@ -409,16 +397,15 @@
     </div>
 
     <!-- Top Header Bar -->
-    <header>
+    <header id="section-header-wrap">
         <div class="header-container">
             <a href="#" class="header-logo-box">
                 <div class="header-logo-circle">
-                    <span class="header-logo-letters">SK</span>
-                    <span class="header-logo-subtext">STUDIO</span>
+                    <img id="img-header-logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiD2TKg0lqo6gKVk10xrfjc7uIF5l379JREgqdHh4seXYP1HJZUA9Q8oLnMpZh16ZRZEgC3REyYfYr2I5Hwbkb8IqgIpA9qIDAMkrO4nEALI2dW1f8qckvZ7S6wscf6ApHW9Vw1KhTtiYlF71XC7xV2mgSALm6uvbfzvYc0PMP5falb-sSOpboq89fffKuV/s1080/1000531837.jpg" alt="Logo">
                 </div>
                 <div class="logo-text-side">
                     <span class="logo-text-brand" id="txt-brand-name">SK STUDIO</span>
-                    <span class="logo-text-sub">design & build</span>
+                    <span class="logo-text-sub" id="txt-brand-sub">design & build</span>
                 </div>
             </a>
             
@@ -430,7 +417,7 @@
     </header>
 
     <!-- Cinematic Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="section-hero-wrap">
         <div class="hero-content">
             <h1 id="txt-hero-title">SK - STUDIO</h1>
             
@@ -454,24 +441,27 @@
     </section>
 
     <!-- Profile Section -->
-    <div class="container">
+    <div class="container" id="section-about-wrap">
         <section id="about" class="reveal">
             <div class="about-grid">
                 <div class="about-img">
                     <img id="img-about" src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1470&auto=format&fit=crop" alt="SK Studio Workspace">
                 </div>
                 <div class="about-text">
-                    <h2 id="txt-about-title">ABOUT US</h2>
-                    <h3 id="txt-about-subtitle">Presisi Desain & Integritas Fisik</h3>
-                    <p id="txt-about-p1">Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</p>
-                    <p id="txt-about-p2">Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</p>
+                    <h2 id="txt-about-title">TENTANG KAMI</h2>
+                    <h3 id="txt-about-subtitle">Layanan & Nilai Utama</h3>
                     
-                    <div class="about-badge">
-                        <i class="fa-solid fa-star"></i>
-                        <div>
-                            <h4 id="txt-badge-title">One-Stop Design & Build</h4>
-                            <p id="txt-badge-desc">Menangani Rumah Tinggal Premium, Komersial Ritel, Apartemen, Kantor, hingga Villa.</p>
-                        </div>
+                    <div class="about-content-box">
+                        <h4 id="txt-about-h1">LAYANAN UTAMA :</h4>
+                        <p id="txt-about-p1"><strong>Arsitektur :</strong> Perencanaan dan perancangan struktur bangunan untuk komersial, residential, landscape, hingga ruang publik yang menarik dan berkualitas.</p>
+                        <p id="txt-about-p2"><strong>Desain Interior :</strong> Perencanaan tata ruang yang estetik, fungsional, dan selaras dengan gaya hidup maupun karakter yang akan menghuni.</p>
+                        <p id="txt-about-p3"><strong>Kontraktor / Pelaksanaan :</strong> Pembangunan badan bangunan secara menyeluruh dari pondasi hingga atap, dengan pengawasan mutu yang maksimal.</p>
+                    </div>
+
+                    <div class="about-content-box">
+                        <h4 id="txt-about-h2">NILAI UTAMA :</h4>
+                        <p id="txt-about-p4"><strong>Inovasi Desain :</strong> Selalu menghadirkan konsep desain arsitektur dan interior yang fresh mengikuti tren, namun tetap memprioritaskan karakter serta kebutuhan personal Klien</p>
+                        <p id="txt-about-p5"><strong>Kualitas & Mutu :</strong> Menjunjung tinggi profesionalisme dan kepercayaan, Kami selalu terbuka untuk diskusi dan transparan yang dimulai dari pemaparan spek material yang berkualitas untuk hasil yang terbaik.</p>
                     </div>
                 </div>
             </div>
@@ -479,9 +469,9 @@
     </div>
 
     <!-- Services Section -->
-    <div class="services-bg" id="services">
+    <div class="services-bg" id="section-services-wrap">
         <div class="container">
-            <section>
+            <section id="services">
                 <div class="section-header reveal">
                     <h2><span id="txt-serv-h2-1">Layanan</span> <span id="txt-serv-h2-2">Utama</span></h2>
                     <p id="txt-serv-desc">Solusi arsitektur dan konstruksi terpadu dari coretan konsep awal hingga serah terima kunci fisik.</p>
@@ -495,7 +485,7 @@
                     <div class="service-card reveal-left">
                         <i class="fa-solid fa-couch"></i>
                         <h3 id="txt-serv-2-title">Desain Interior (Interior Architecture)</h3>
-                        <p id="txt-serv-2-desc">Transformasi tata ruang bagian dalam lewat aransemen *custom furniture*, pemilihan material kelas premium, skema pencahayaan ambient eksklusif, serta optimalisasi ergonomi kenyamanan ruang.</p>
+                        <p id="txt-serv-2-desc">Transformasi tata ruang bagian dalam lewat aransemen custom furniture, pemilihan material kelas premium, skema pencahayaan ambient eksklusif, serta optimalisasi ergonomi kenyamanan ruang.</p>
                     </div>
                     <div class="service-card reveal-left">
                         <i class="fa-solid fa-trowel-bricks"></i>
@@ -508,9 +498,9 @@
     </div>
 
     <!-- Working Process Section -->
-    <div class="process-section-wrapper" id="process">
+    <div class="process-section-wrapper" id="section-process-wrap">
         <div class="container">
-            <section>
+            <section id="process">
                 <div class="section-header reveal">
                     <h2><span id="txt-proc-h2-1">Our Working</span> <span id="txt-proc-h2-2">Process</span></h2>
                     <p id="txt-proc-desc">Alur tata kelola pengerjaan proyek yang tertata rapi demi menjaga kepastian mutu bangunan Anda.</p>
@@ -542,7 +532,7 @@
     </div>
 
     <!-- DYNAMIC STATS COUNTER BAR -->
-    <div class="stats-bg" id="stats-section">
+    <div class="stats-bg" id="section-stats-wrap">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -566,49 +556,49 @@
     </div>
 
     <!-- Portfolio Gallery Section -->
-    <div class="container">
+    <div class="container" id="section-portfolio-wrap">
         <section id="portfolio">
             <div class="section-header reveal">
                 <h2><span id="txt-port-h2-1">Featured</span> <span id="txt-port-h2-2">Projects</span></h2>
                 <p id="txt-port-desc">Eksplorasi estetika dari deretan karya ruang residensial dan komersial yang telah kami eksekusi.</p>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-1">
                     <img id="img-port-1" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1475&auto=format&fit=crop" alt="Modern Luxury House">
                     <div class="portfolio-overlay">
                         <span id="txt-port-1-tag">Architecture & Build</span>
                         <h3 id="txt-port-1-title">The Obsidian Luxury Residence</h3>
                     </div>
                 </div>
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-2">
                     <img id="img-port-2" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1470&auto=format&fit=crop" alt="Luxury Living Room">
                     <div class="portfolio-overlay">
                         <span id="txt-port-2-tag">Interior Architecture</span>
                         <h3 id="txt-port-2-title">Japandi Modern Penthouse</h3>
                     </div>
                 </div>
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-3">
                     <img id="img-port-3" src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1496&auto=format&fit=crop" alt="Modern Headquarters Office">
                     <div class="portfolio-overlay">
                         <span id="txt-port-3-tag">Commercial Space</span>
                         <h3 id="txt-port-3-title">SK Atelier Corporate Office</h3>
                     </div>
                 </div>
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-4">
                     <img id="img-port-4" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1453&auto=format&fit=crop" alt="Luxury Villa Fasad">
                     <div class="portfolio-overlay">
                         <span id="txt-port-4-tag">Architecture & Villa</span>
                         <h3 id="txt-port-4-title">Crystal Waters Elite Villa</h3>
                     </div>
                 </div>
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-5">
                     <img id="img-port-5" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1374&auto=format&fit=crop" alt="Modern Luxury Kitchen">
                     <div class="portfolio-overlay">
                         <span id="txt-port-5-tag">Interior Design</span>
                         <h3 id="txt-port-5-title">Minimalist Monochromatic Kitchen</h3>
                     </div>
                 </div>
-                <div class="portfolio-card reveal">
+                <div class="portfolio-card reveal" id="card-port-6">
                     <img id="img-port-6" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1470&auto=format&fit=crop" alt="Lounge Boutique">
                     <div class="portfolio-overlay">
                         <span id="txt-port-6-tag">Commercial Retail</span>
@@ -620,9 +610,9 @@
     </div>
 
     <!-- Testimonial Section -->
-    <div class="testimonial-bg" id="testimoni">
+    <div class="testimonial-bg" id="section-testi-wrap">
         <div class="container">
-            <section class="reveal">
+            <section class="reveal" id="testimoni">
                 <div class="section-header">
                     <h2><span id="txt-testi-h2-1">Apresiasi</span> <span id="txt-testi-h2-2">Klien</span></h2>
                     <p id="txt-testi-desc">Kepercayaan dari berbagai pemilik properti eksklusif atas dedikasi nyata tim kami.</p>
@@ -706,9 +696,9 @@
     </div>
 
     <!-- FAQ Accordion Section -->
-    <div class="faq-bg" id="faq">
+    <div class="faq-bg" id="section-faq-wrap">
         <div class="container">
-            <section class="reveal">
+            <section class="reveal" id="faq">
                 <div class="section-header">
                     <h2><span id="txt-faq-h2-1">Pertanyaan</span> <span id="txt-faq-h2-2">Umum (Q&A)</span></h2>
                     <p id="txt-faq-desc">Informasi terlengkap dan regulasi pengerjaan proyek desain serta konstruksi bangunan bersama SK STUDIO.</p>
@@ -800,7 +790,7 @@
     </div>
 
     <!-- Contact & Map Section -->
-    <div class="container">
+    <div class="container" id="section-contact-wrap">
         <section id="contact" class="reveal">
             <div class="section-header">
                 <h2><span id="txt-cont-h2-1">Connect With</span> <span id="txt-cont-h2-2">SK Studio</span></h2>
@@ -839,7 +829,7 @@
     </div>
 
     <!-- Footer Segment -->
-    <footer>
+    <footer id="section-footer-wrap">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-logo">
@@ -872,52 +862,66 @@
         </div>
     </footer>
 
-    <!-- ADMIN PANEL UI DENGAN BROWSE FILE & KOMPRESI <100KB -->
+    <!-- ADMIN PANEL UI LENGKAP DENGAN FITUR HAPUS + KONFIRMASI -->
     <div class="admin-panel" id="adminPanel">
         <h3><span>SK Admin Panel</span><button class="admin-close" onclick="toggleAdminPanel()"><i class="fa-solid fa-xmark"></i></button></h3>
         <div class="admin-content-scroll">
-            <p style="font-size: 0.75rem; color: var(--text-dim);">Ubah teks atau pilih file gambar langsung dari HP (otomatis dikompres di bawah 100KB).</p>
+            <p style="font-size: 0.75rem; color: var(--text-dim);">Ubah teks, unggah gambar (< 100KB), atau hapus bagian section jika tidak diperlukan.</p>
             
-            <div class="admin-section-title">Hero Section</div>
+            <div class="admin-section-title">Header Section <button class="admin-btn-delete" onclick="confirmDelete('section-header-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Nama Brand Header</label><input type="text" id="edit-brand-name" value="SK STUDIO"></div>
+            <div class="admin-group"><label>Subtext Brand Header</label><input type="text" id="edit-brand-sub" value="design & build"></div>
+            <div class="admin-group"><label>Upload Logo Utama</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'logoUrl')"></div>
+
+            <div class="admin-section-title">Hero Section <button class="admin-btn-delete" onclick="confirmDelete('section-hero-wrap')">Hapus</button></div>
             <div class="admin-group"><label>Judul Utama (H1)</label><input type="text" id="edit-hero-title" value="SK - STUDIO"></div>
             <div class="admin-group"><label>Subjudul Hero</label><input type="text" id="edit-hero-subtitle" value="KONTRAKTOR &bull; ARSITEKTUR &bull; INTERIOR DESIGNER"></div>
             <div class="admin-group"><label>Deskripsi Hero</label><textarea id="edit-hero-desc">Konsultan Rancang Bangun Premium. Kami Menghadirkan Jasa Kontraktor Pelaksana Struktur yang Aman, Rancangan Arsitektur Eksklusif, serta Sentuhan Interior Designer Profesional dengan Visualisasi 3D Realistis Tangguh.</textarea></div>
-            
-            <div class="admin-section-title">About Section</div>
-            <div class="admin-group"><label>Judul About</label><input type="text" id="edit-about-title" value="ABOUT US"></div>
-            <div class="admin-group"><label>Subjudul About</label><input type="text" id="edit-about-subtitle" value="Presisi Desain & Integritas Fisik"></div>
-            <div class="admin-group"><label>Paragraf 1 About</label><textarea id="edit-about-p1">Berbasis di Bekasi, SK STUDIO diperkuat oleh formasi praktisi profesional bidang Arsitektur, Tata Ruang Interior, dan Kontraktor Struktur Pelaksana yang berpengalaman panjang di industri rancang bangun tanah air.</textarea></div>
-            <div class="admin-group"><label>Paragraf 2 About</label><textarea id="edit-about-p2">Kami sangat memahami kekhawatiran terbesar klien, yaitu ketidaksesuaian antara hasil gambar draf arsitek dengan wujud asli bangunan fisik di lapangan. Oleh karena itu, kami mengadopsi kemajuan teknologi visualisasi 3D mutakhir yang memiliki tingkat akurasi tinggi mendekati realitas nyata untuk mempermudah calon klien memproyeksikan investasinya.</textarea></div>
+            <div class="admin-group"><label>Teks Tombol Hero</label><input type="text" id="edit-hero-btn" value="Konsultasi Eksklusif"></div>
+            <div class="admin-group"><label>Background Latar Hero</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgHeroBgUrl')"></div>
 
-            <div class="admin-section-title">Upload Gambar (Otomatis <100KB)</div>
-            <div class="admin-group">
-                <label>Foto Profil (About)</label>
-                <input type="file" class="admin-file-input" id="file-about" accept="image/*" onchange="compressAndStore(this, 'imgAboutUrl')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 1</label>
-                <input type="file" class="admin-file-input" id="file-port-1" accept="image/*" onchange="compressAndStore(this, 'imgPort1Url')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 2</label>
-                <input type="file" class="admin-file-input" id="file-port-2" accept="image/*" onchange="compressAndStore(this, 'imgPort2Url')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 3</label>
-                <input type="file" class="admin-file-input" id="file-port-3" accept="image/*" onchange="compressAndStore(this, 'imgPort3Url')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 4</label>
-                <input type="file" class="admin-file-input" id="file-port-4" accept="image/*" onchange="compressAndStore(this, 'imgPort4Url')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 5</label>
-                <input type="file" class="admin-file-input" id="file-port-5" accept="image/*" onchange="compressAndStore(this, 'imgPort5Url')">
-            </div>
-            <div class="admin-group">
-                <label>Foto Portofolio 6</label>
-                <input type="file" class="admin-file-input" id="file-port-6" accept="image/*" onchange="compressAndStore(this, 'imgPort6Url')">
-            </div>
+            <div class="admin-section-title">Tentang Kami Section <button class="admin-btn-delete" onclick="confirmDelete('section-about-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Judul Bagian</label><input type="text" id="edit-about-title" value="TENTANG KAMI"></div>
+            <div class="admin-group"><label>Subjudul Bagian</label><input type="text" id="edit-about-subtitle" value="Layanan & Nilai Utama"></div>
+            <div class="admin-group"><label>Paragraf Layanan 1 (Arsitektur)</label><textarea id="edit-about-p1">Perencanaan dan perancangan struktur bangunan untuk komersial, residential, landscape, hingga ruang publik yang menarik dan berkualitas.</textarea></div>
+            <div class="admin-group"><label>Paragraf Layanan 2 (Interior)</label><textarea id="edit-about-p2">Perencanaan tata ruang yang estetik, fungsional, dan selaras dengan gaya hidup maupun karakter yang akan menghuni.</textarea></div>
+            <div class="admin-group"><label>Paragraf Layanan 3 (Kontraktor)</label><textarea id="edit-about-p3">Pembangunan badan bangunan secara menyeluruh dari pondasi hingga atap, dengan pengawasan mutu yang maksimal.</textarea></div>
+            <div class="admin-group"><label>Paragraf Nilai 1 (Inovasi)</label><textarea id="edit-about-p4">Selalu menghadirkan konsep desain arsitektur dan interior yang fresh mengikuti tren, namun tetap memprioritaskan karakter serta kebutuhan personal Klien</textarea></div>
+            <div class="admin-group"><label>Paragraf Nilai 2 (Kualitas)</label><textarea id="edit-about-p5">Menjunjung tinggi profesionalisme dan kepercayaan, Kami selalu terbuka untuk diskusi dan transparan yang dimulai dari pemaparan spek material yang berkualitas untuk hasil yang terbaik.</textarea></div>
+            <div class="admin-group"><label>Foto Profil / About</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgAboutUrl')"></div>
+
+            <div class="admin-section-title">Layanan Utama Section <button class="admin-btn-delete" onclick="confirmDelete('section-services-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Judul Layanan</label><input type="text" id="edit-serv-h2" value="Layanan Utama"></div>
+            <div class="admin-group"><label>Deskripsi Layanan</label><textarea id="edit-serv-desc">Solusi arsitektur dan konstruksi terpadu dari coretan konsep awal hingga serah terima kunci fisik.</textarea></div>
+
+            <div class="admin-section-title">Process Section <button class="admin-btn-delete" onclick="confirmDelete('section-process-wrap')">Hapus</button></div>
+            <div class="admin-section-title">Stats Counter Section <button class="admin-btn-delete" onclick="confirmDelete('section-stats-wrap')">Hapus</button></div>
+
+            <div class="admin-section-title">Portfolio Section <button class="admin-btn-delete" onclick="confirmDelete('section-portfolio-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Foto Portofolio 1</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort1Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 1</label><input type="text" id="edit-port-1-title" value="The Obsidian Luxury Residence"></div>
+            <div class="admin-group"><label>Foto Portofolio 2</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort2Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 2</label><input type="text" id="edit-port-2-title" value="Japandi Modern Penthouse"></div>
+            <div class="admin-group"><label>Foto Portofolio 3</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort3Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 3</label><input type="text" id="edit-port-3-title" value="SK Atelier Corporate Office"></div>
+            <div class="admin-group"><label>Foto Portofolio 4</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort4Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 4</label><input type="text" id="edit-port-4-title" value="Crystal Waters Elite Villa"></div>
+            <div class="admin-group"><label>Foto Portofolio 5</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort5Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 5</label><input type="text" id="edit-port-5-title" value="Minimalist Monochromatic Kitchen"></div>
+            <div class="admin-group"><label>Foto Portofolio 6</label><input type="file" class="admin-file-input" accept="image/*" onchange="compressAndStore(this, 'imgPort6Url')"></div>
+            <div class="admin-group"><label>Judul Portofolio 6</label><input type="text" id="edit-port-6-title" value="Aura Premium Fashion Hub"></div>
+
+            <div class="admin-section-title">Testimonial Section <button class="admin-btn-delete" onclick="confirmDelete('section-testi-wrap')">Hapus</button></div>
+            <div class="admin-section-title">FAQ Section <button class="admin-btn-delete" onclick="confirmDelete('section-faq-wrap')">Hapus</button></div>
+
+            <div class="admin-section-title">Contact Section <button class="admin-btn-delete" onclick="confirmDelete('section-contact-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Alamat Studio</label><input type="text" id="edit-cont-loc" value="Bekasi, Jawa Barat, Indonesia"></div>
+            <div class="admin-group"><label>Nomor Telepon / WA</label><input type="text" id="edit-cont-phone" value="+62 821-1595-0870"></div>
+            <div class="admin-group"><label>Jam Operasional</label><input type="text" id="edit-cont-time" value="Senin – Sabtu: 09.00 - 18.00 WIB"></div>
+
+            <div class="admin-section-title">Footer Section <button class="admin-btn-delete" onclick="confirmDelete('section-footer-wrap')">Hapus</button></div>
+            <div class="admin-group"><label>Deskripsi Footer</label><textarea id="edit-foot-desc">Firma tata ruang arsitektur premium, interior eksklusif, dan unit kontraktor terpercaya berintegritas tinggi dengan fokus mahakarya struktur spasial presisi.</textarea></div>
+            <div class="admin-group"><label>Teks Copyright Footer</label><input type="text" id="edit-foot-copy" value="&copy; 2026 CV. SK-STUDIO. All Rights Reserved."></div>
 
             <button class="admin-btn-save" onclick="saveAdminChanges()">Terapkan & Simpan ke Firebase</button>
         </div>
@@ -941,11 +945,10 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Simpan fungsi ke window agar bisa dipanggil HTML luar
         window.saveToFirebase = async function(dataObj) {
             try {
-                await setDoc(doc(db, "websiteContent", "mainData"), dataObj);
-                alert("Berhasil! Data dan gambar tersimpan permanen ke Firebase.");
+                await setDoc(doc(db, "websiteContent", "mainDataFullCustom"), dataObj);
+                alert("Berhasil! Seluruh konfigurasi berhasil disimpan ke Firebase.");
                 toggleAdminPanel();
             } catch (error) {
                 console.error("Gagal menyimpan: ", error);
@@ -955,17 +958,70 @@
 
         window.loadFromFirebase = async function() {
             try {
-                const docSnap = await getDoc(doc(db, "websiteContent", "mainData"));
+                const docSnap = await getDoc(doc(db, "websiteContent", "mainDataFullCustom"));
                 if (docSnap.exists()) {
                     const d = docSnap.data();
-                    if(d.heroTitle) document.getElementById('txt-hero-title').innerText = d.heroTitle;
-                    if(d.heroSubtitle) document.getElementById('txt-hero-subtitle').innerHTML = d.heroSubtitle;
-                    if(d.heroDesc) document.getElementById('txt-hero-desc').innerText = d.heroDesc;
-                    if(d.aboutTitle) document.getElementById('txt-about-title').innerText = d.aboutTitle;
-                    if(d.aboutSubtitle) document.getElementById('txt-about-subtitle').innerText = d.aboutSubtitle;
-                    if(d.aboutP1) document.getElementById('txt-about-p1').innerText = d.aboutP1;
-                    if(d.aboutP2) document.getElementById('txt-about-p2').innerText = d.aboutP2;
+                    if(d.brandName) { document.getElementById('txt-brand-name').innerText = d.brandName; document.getElementById('edit-brand-name').value = d.brandName; }
+                    if(d.brandSub) { document.getElementById('txt-brand-sub').innerText = d.brandSub; document.getElementById('edit-brand-sub').value = d.brandSub; }
+                    if(d.heroTitle) { document.getElementById('txt-hero-title').innerText = d.heroTitle; document.getElementById('edit-hero-title').value = d.heroTitle; }
+                    if(d.heroSubtitle) { document.getElementById('txt-hero-subtitle').innerHTML = d.heroSubtitle; document.getElementById('edit-hero-subtitle').value = d.heroSubtitle; }
+                    if(d.heroDesc) { document.getElementById('txt-hero-desc').innerText = d.heroDesc; document.getElementById('edit-hero-desc').value = d.heroDesc; }
+                    if(d.heroBtn) { document.getElementById('txt-hero-btn').innerText = d.heroBtn; document.getElementById('edit-hero-btn').value = d.heroBtn; }
+                    
+                    if(d.aboutTitle) { document.getElementById('txt-about-title').innerText = d.aboutTitle; document.getElementById('edit-about-title').value = d.aboutTitle; }
+                    if(d.aboutSubtitle) { document.getElementById('txt-about-subtitle').innerText = d.aboutSubtitle; document.getElementById('edit-about-subtitle').value = d.aboutSubtitle; }
+                    
+                    if(d.aboutP1) { 
+                        document.getElementById('txt-about-p1').innerHTML = `<strong>Arsitektur :</strong> ${d.aboutP1}`; 
+                        document.getElementById('edit-about-p1').value = d.aboutP1; 
+                    }
+                    if(d.aboutP2) { 
+                        document.getElementById('txt-about-p2').innerHTML = `<strong>Desain Interior :</strong> ${d.aboutP2}`; 
+                        document.getElementById('edit-about-p2').value = d.aboutP2; 
+                    }
+                    if(d.aboutP3) { 
+                        document.getElementById('txt-about-p3').innerHTML = `<strong>Kontraktor / Pelaksanaan :</strong> ${d.aboutP3}`; 
+                        document.getElementById('edit-about-p3').value = d.aboutP3; 
+                    }
+                    if(d.aboutP4) { 
+                        document.getElementById('txt-about-p4').innerHTML = `<strong>Inovasi Desain :</strong> ${d.aboutP4}`; 
+                        document.getElementById('edit-about-p4').value = d.aboutP4; 
+                    }
+                    if(d.aboutP5) { 
+                        document.getElementById('txt-about-p5').innerHTML = `<strong>Kualitas & Mutu :</strong> ${d.aboutP5}`; 
+                        document.getElementById('edit-about-p5').value = d.aboutP5; 
+                    }
 
+                    if(d.servH2) { document.getElementById('txt-serv-h2-1').innerText = d.servH2; document.getElementById('edit-serv-h2').value = d.servH2; }
+                    if(d.servDesc) { document.getElementById('txt-serv-desc').innerText = d.servDesc; document.getElementById('edit-serv-desc').value = d.servDesc; }
+
+                    if(d.port1Title) { document.getElementById('txt-port-1-title').innerText = d.port1Title; document.getElementById('edit-port-1-title').value = d.port1Title; }
+                    if(d.port2Title) { document.getElementById('txt-port-2-title').innerText = d.port2Title; document.getElementById('edit-port-2-title').value = d.port2Title; }
+                    if(d.port3Title) { document.getElementById('txt-port-3-title').innerText = d.port3Title; document.getElementById('edit-port-3-title').value = d.port3Title; }
+                    if(d.port4Title) { document.getElementById('txt-port-4-title').innerText = d.port4Title; document.getElementById('edit-port-4-title').value = d.port4Title; }
+                    if(d.port5Title) { document.getElementById('txt-port-5-title').innerText = d.port5Title; document.getElementById('edit-port-5-title').value = d.port5Title; }
+                    if(d.port6Title) { document.getElementById('txt-port-6-title').innerText = d.port6Title; document.getElementById('edit-port-6-title').value = d.port6Title; }
+
+                    if(d.contLoc) { document.getElementById('txt-cont-loc-desc').innerText = d.contLoc; document.getElementById('edit-cont-loc').value = d.contLoc; }
+                    if(d.contPhone) { document.getElementById('txt-cont-phone-desc').innerText = d.contPhone; document.getElementById('edit-cont-phone').value = d.contPhone; }
+                    if(d.contTime) { document.getElementById('txt-cont-time-desc').innerText = d.contTime; document.getElementById('edit-cont-time').value = d.contTime; }
+                    if(d.footDesc) { document.getElementById('txt-foot-desc').innerText = d.footDesc; document.getElementById('edit-foot-desc').value = d.footDesc; }
+                    if(d.footCopy) { document.getElementById('txt-foot-copy').innerHTML = d.footCopy; document.getElementById('edit-foot-copy').value = d.footCopy; }
+
+                    // Pengaturan Tampilan Elemen yang Dihapus / Disembunyikan
+                    if(d.deletedSections && Array.isArray(d.deletedSections)) {
+                        d.deletedSections.forEach(id => {
+                            const el = document.getElementById(id);
+                            if(el) el.style.display = 'none';
+                        });
+                    }
+
+                    // Gambar Logo Baru
+                    if(d.logoUrl) {
+                        document.getElementById('img-header-logo').src = d.logoUrl;
+                        document.getElementById('img-loader-logo').src = d.logoUrl;
+                    }
+                    if(d.imgHeroBgUrl) document.querySelector('.hero').style.backgroundImage = `linear-gradient(to bottom, rgba(12, 12, 14, 0.6), rgba(12, 12, 14, 0.92)), url('${d.imgHeroBgUrl}')`;
                     if(d.imgAboutUrl) document.getElementById('img-about').src = d.imgAboutUrl;
                     if(d.imgPort1Url) document.getElementById('img-port-1').src = d.imgPort1Url;
                     if(d.imgPort2Url) document.getElementById('img-port-2').src = d.imgPort2Url;
@@ -985,10 +1041,24 @@
     </script>
 
     <script>
-        // Variabel penampung hasil kompresi gambar sementara
         let uploadedImages = {};
+        let deletedSectionList = [];
 
-        // Fungsi kompresi gambar otomatis di bawah 100KB
+        function confirmDelete(sectionId) {
+            const sectionName = sectionId.replace('section-', '').replace('-wrap', '').toUpperCase();
+            const isConfirmed = confirm(`Yakin ingin menghapus section "${sectionName}" dari halaman web? Tindakan ini dapat disimpan secara permanen.`);
+            if (isConfirmed) {
+                const targetEl = document.getElementById(sectionId);
+                if (targetEl) {
+                    targetEl.style.display = 'none';
+                    if (!deletedSectionList.includes(sectionId)) {
+                        deletedSectionList.push(sectionId);
+                    }
+                    alert(`Section "${sectionName}" berhasil disembunyikan/dihapus. Klik "Terapkan & Simpan ke Firebase" untuk menyimpan permanen.`);
+                }
+            }
+        }
+
         function compressAndStore(inputElement, dataKey) {
             const file = inputElement.files[0];
             if (!file) return;
@@ -1003,19 +1073,12 @@
                     let width = img.width;
                     let height = img.height;
 
-                    // Batasi dimensi maksimal agar ukuran file kecil
                     const MAX_WIDTH = 800;
                     const MAX_HEIGHT = 800;
                     if (width > height) {
-                        if (width > MAX_WIDTH) {
-                            height *= MAX_WIDTH / width;
-                            width = MAX_WIDTH;
-                        }
+                        if (width > MAX_WIDTH) { height *= MAX_WIDTH / width; width = MAX_WIDTH; }
                     } else {
-                        if (height > MAX_HEIGHT) {
-                            width *= MAX_HEIGHT / height;
-                            height = MAX_HEIGHT;
-                        }
+                        if (height > MAX_HEIGHT) { width *= MAX_HEIGHT / height; height = MAX_HEIGHT; }
                     }
 
                     canvas.width = width;
@@ -1023,7 +1086,6 @@
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, width, height);
 
-                    // Kompres kualitas bertahap sampai ukurannya di bawah 100KB
                     let quality = 0.7;
                     let dataUrl = canvas.toDataURL('image/jpeg', quality);
 
@@ -1033,7 +1095,7 @@
                     }
 
                     uploadedImages[dataKey] = dataUrl;
-                    alert("Gambar berhasil dipilih & dikompres di bawah 100KB!");
+                    alert("File gambar berhasil dipilih dan dikompres di bawah 100KB!");
                 }
             }
         }
@@ -1054,13 +1116,41 @@
 
         function saveAdminChanges() {
             const dataToSave = {
+                brandName: document.getElementById('edit-brand-name').value,
+                brandSub: document.getElementById('edit-brand-sub').value,
                 heroTitle: document.getElementById('edit-hero-title').value,
                 heroSubtitle: document.getElementById('edit-hero-subtitle').value,
                 heroDesc: document.getElementById('edit-hero-desc').value,
+                heroBtn: document.getElementById('edit-hero-btn').value,
+                
                 aboutTitle: document.getElementById('edit-about-title').value,
                 aboutSubtitle: document.getElementById('edit-about-subtitle').value,
                 aboutP1: document.getElementById('edit-about-p1').value,
                 aboutP2: document.getElementById('edit-about-p2').value,
+                aboutP3: document.getElementById('edit-about-p3').value,
+                aboutP4: document.getElementById('edit-about-p4').value,
+                aboutP5: document.getElementById('edit-about-p5').value,
+
+                servH2: document.getElementById('edit-serv-h2').value,
+                servDesc: document.getElementById('edit-serv-desc').value,
+
+                port1Title: document.getElementById('edit-port-1-title').value,
+                port2Title: document.getElementById('edit-port-2-title').value,
+                port3Title: document.getElementById('edit-port-3-title').value,
+                port4Title: document.getElementById('edit-port-4-title').value,
+                port5Title: document.getElementById('edit-port-5-title').value,
+                port6Title: document.getElementById('edit-port-6-title').value,
+
+                contLoc: document.getElementById('edit-cont-loc').value,
+                contPhone: document.getElementById('edit-cont-phone').value,
+                contTime: document.getElementById('edit-cont-time').value,
+                footDesc: document.getElementById('edit-foot-desc').value,
+                footCopy: document.getElementById('edit-foot-copy').value,
+
+                deletedSections: deletedSectionList,
+
+                logoUrl: uploadedImages['logoUrl'] || document.getElementById('img-header-logo').src,
+                imgHeroBgUrl: uploadedImages['imgHeroBgUrl'] || '',
                 imgAboutUrl: uploadedImages['imgAboutUrl'] || document.getElementById('img-about').src,
                 imgPort1Url: uploadedImages['imgPort1Url'] || document.getElementById('img-port-1').src,
                 imgPort2Url: uploadedImages['imgPort2Url'] || document.getElementById('img-port-2').src,
@@ -1070,7 +1160,6 @@
                 imgPort6Url: uploadedImages['imgPort6Url'] || document.getElementById('img-port-6').src
             };
 
-            // Panggil fungsi simpan ke Firebase
             window.saveToFirebase(dataToSave);
         }
 
